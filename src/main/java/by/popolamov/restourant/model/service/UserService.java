@@ -1,4 +1,4 @@
-package by.popolamov.restourant.service;
+package by.popolamov.restourant.model.service;
 
 import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.model.entity.User;

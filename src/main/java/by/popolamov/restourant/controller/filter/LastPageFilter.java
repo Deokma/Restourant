@@ -1,8 +1,8 @@
-package by.radzionau.imdb.controller.filter;
+package by.popolamov.restourant.controller.filter;
 
-import by.radzionau.imdb.controller.command.RequestAttribute;
+import by.popolamov.restourant.controller.command.RequestAttribute;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.IOException;

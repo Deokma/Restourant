@@ -1,11 +1,11 @@
-package by.radzionau.imdb.controller.filter;
+package by.popolamov.restourant.controller.filter;
 
-import by.radzionau.imdb.controller.command.CommandType;
-import by.radzionau.imdb.controller.command.RequestParameter;
-import by.radzionau.imdb.controller.command.SessionAttribute;
-import by.radzionau.imdb.model.entity.UserRole;
+import by.popolamov.restourant.controller.command.CommandType;
+import by.popolamov.restourant.controller.command.RequestParameter;
+import by.popolamov.restourant.controller.command.SessionAttribute;
+import by.popolamov.restourant.model.entity.UserRole;
 import jakarta.servlet.*;
-import jakarta.servlet.annotation.*;
+import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -23,7 +23,7 @@ public class RoleFilter implements Filter {
     @Override
     public void init(FilterConfig config) {
         generalCommands = EnumSet.range(CommandType.SIGN_IN, CommandType.CHANGE_LOCALE);
-        adminCommands = EnumSet.range(CommandType.GET_USERS, CommandType.ADD_GENRE);
+        adminCommands = EnumSet.range(CommandType.GET_USERS, CommandType.ADD_MENU);
     }
 
     @Override

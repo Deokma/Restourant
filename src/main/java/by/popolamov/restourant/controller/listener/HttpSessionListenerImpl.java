@@ -1,6 +1,6 @@
-package by.radzionau.imdb.controller.listener;
+package by.popolamov.restourant.controller.listener;
 
-import by.radzionau.imdb.controller.command.SessionAttribute;
+import by.popolamov.restourant.controller.command.SessionAttribute;
 import jakarta.servlet.annotation.WebListener;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;

@@ -1,8 +1,8 @@
-package by.radzionau.imdb.controller.command.impl.moveto.general;
+package by.popolamov.restourant.controller.command.impl.moveto.general;
 
-import by.radzionau.imdb.controller.command.Command;
-import by.radzionau.imdb.controller.command.PagePath;
-import by.radzionau.imdb.controller.command.Router;
+import by.popolamov.restourant.controller.command.Command;
+import by.popolamov.restourant.controller.command.PagePath;
+import by.popolamov.restourant.controller.command.Router;
 import jakarta.servlet.http.HttpServletRequest;
 
 public class MoveToLoginPageCommand implements Command {

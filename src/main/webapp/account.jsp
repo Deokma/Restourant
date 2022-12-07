@@ -7,10 +7,22 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Account</title>
+    <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
+</head>
+<body>
+<jsp:include page="components/navbar.jsp"/>
+<div class="row justify-content-center">
+    <div class="col-8">
+        <h1>Personal account</h1>
+        <p>Hello, ${login}</p>
+        <p>Role: ${role}</p>
+    </div>
+<div class="row">
+    <jsp:include page="components/accountorders.jsp"/>
+    <jsp:include page="components/key.jsp"/>
+</div>
+</div>
+</body>
 </html>

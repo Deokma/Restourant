@@ -1,12 +1,10 @@
-package by.radzionau.imdb.controller.command.impl.general;
+package by.popolamov.restourant.controller.command.impl.general;
 
-import by.radzionau.imdb.controller.command.*;
-import by.radzionau.imdb.controller.command.RequestUtil;
-import by.radzionau.imdb.exception.ServiceException;
-import by.radzionau.imdb.model.entity.User;
-import by.radzionau.imdb.model.entity.UserStatus;
-import by.radzionau.imdb.model.service.UserService;
-import by.radzionau.imdb.model.service.impl.UserServiceImpl;
+import by.popolamov.restourant.controller.command.*;
+import by.popolamov.restourant.exception.ServiceException;
+import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.service.UserService;
+import by.popolamov.restourant.model.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,10 +24,6 @@ public class SignInCommand implements Command {
             String login = requestUtil.getParameterAsString(request, RequestParameter.LOGIN);
             String password = requestUtil.getParameterAsString(request, RequestParameter.PASSWORD);
             User user = service.signIn(login, password);
-            if (user.getStatus() == UserStatus.NON_ACTIVATED || user.getStatus() == UserStatus.BANNED) {
-                request.setAttribute(RequestAttribute.ERROR_MESSAGE, "your account non activated or banned");
-                return new Router(PagePath.LOGIN_PAGE.getAddress(), Router.RouterType.FORWARD);
-            }
             setSessionAttributes(request, user);
             router = new Router(PagePath.INDEX_PAGE.getAddress(), Router.RouterType.REDIRECT);
         } catch (ServiceException e) {
@@ -42,6 +36,7 @@ public class SignInCommand implements Command {
 
     private void setSessionAttributes(HttpServletRequest request, User user) {
         request.getSession().setAttribute(SessionAttribute.USER, user);
+        request.getSession().setAttribute(SessionAttribute.USER_ID, user.getUserId());
         request.getSession().setAttribute(SessionAttribute.LOGIN, user.getLogin());
         request.getSession().setAttribute(SessionAttribute.ROLE, user.getRole());
     }

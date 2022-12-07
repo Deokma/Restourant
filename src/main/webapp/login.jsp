@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <link href="css/login.css" rel="stylesheet" type="text/css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -21,6 +22,7 @@
         <div class="col border rounded p-4">
             <h3 class="text-center mb-4">Login</h3>
             <form action="${pageContext.request.contextPath}/controller" method="post">
+                <input type="hidden" name="command" value="sign_in">
                 <div class="form-group">
                     <label for="floatingInput">
                         <fmt:message key="login.label.login"/>

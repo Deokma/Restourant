@@ -21,7 +21,6 @@
             aCookie.setMaxAge(0);
             response.addCookie(aCookie);
         }
-
     }
 %>
 </body>

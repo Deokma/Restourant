@@ -1,12 +1,14 @@
-package by.radzionau.imdb.controller.command.impl.general;
+package by.popolamov.restourant.controller.command.impl.general;
 
-import by.radzionau.imdb.controller.command.*;
-import by.radzionau.imdb.exception.ServiceException;
-import by.radzionau.imdb.model.entity.User;
-import by.radzionau.imdb.model.service.UserService;
-import by.radzionau.imdb.model.service.impl.UserServiceImpl;
-import by.radzionau.imdb.model.validator.UserValidator;
-import by.radzionau.imdb.util.mail.EmailSenderUtil;
+import by.popolamov.restourant.controller.command.*;
+import by.popolamov.restourant.exception.ServiceException;
+import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.service.UserService;
+import by.popolamov.restourant.controller.command.*;
+import by.popolamov.restourant.exception.ServiceException;
+import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.service.UserService;
+import by.popolamov.restourant.model.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -34,10 +36,9 @@ public class SignUpCommand implements Command {
         }
         try {
             User user = signUpUser(signupParameters);
-            EmailSenderUtil.getInstance().sendAuthenticationMessage(user);
             request.getSession().setAttribute(SessionAttribute.USER, user);
-            router = new Router(PagePath.VERIFY_EMAIL_PAGE.getAddress(), Router.RouterType.FORWARD);
-        } catch (ServiceException | MessagingException | IOException e) {
+            router = new Router(PagePath.INDEX_PAGE.getAddress(), Router.RouterType.FORWARD);
+        } catch (ServiceException e) {
             logger.error("Error at SignUpCommand", e);
             request.setAttribute(RequestAttribute.ERROR_MESSAGE, "wrong data");
             setSignupParameters(request, signupParameters);
@@ -51,9 +52,8 @@ public class SignUpCommand implements Command {
                 signupParameters.get(RequestParameter.LOGIN),
                 signupParameters.get(RequestParameter.PASSWORD),
                 signupParameters.get(RequestParameter.REPEATED_PASSWORD),
-                signupParameters.get(RequestParameter.EMAIL),
-                signupParameters.get(RequestParameter.FIRST_NAME),
-                signupParameters.get(RequestParameter.SURNAME)
+                signupParameters.get(RequestParameter.FIRSTNAME),
+                signupParameters.get(RequestParameter.FIRSTNAME)
         );
     }
 
@@ -62,9 +62,8 @@ public class SignUpCommand implements Command {
         signUpParameters.put(RequestParameter.LOGIN, request.getParameter(RequestParameter.LOGIN));
         signUpParameters.put(RequestParameter.PASSWORD, request.getParameter(RequestParameter.PASSWORD));
         signUpParameters.put(RequestParameter.REPEATED_PASSWORD, request.getParameter(RequestParameter.REPEATED_PASSWORD));
-        signUpParameters.put(RequestParameter.EMAIL, request.getParameter(RequestParameter.EMAIL));
-        signUpParameters.put(RequestParameter.FIRST_NAME, request.getParameter(RequestParameter.FIRST_NAME));
-        signUpParameters.put(RequestParameter.SURNAME, request.getParameter(RequestParameter.SURNAME));
+        signUpParameters.put(RequestParameter.FIRSTNAME, request.getParameter(RequestParameter.FIRSTNAME));
+        signUpParameters.put(RequestParameter.LASTNAME, request.getParameter(RequestParameter.LASTNAME));
         return signUpParameters;
     }
 
@@ -84,10 +83,6 @@ public class SignUpCommand implements Command {
         if (!signupParameters.get(RequestParameter.PASSWORD).equals(signupParameters.get(RequestParameter.REPEATED_PASSWORD))) {
             signupParameters.put(RequestParameter.PASSWORD, "");
             signupParameters.put(RequestParameter.REPEATED_PASSWORD, "");
-            flag = false;
-        }
-        if (!UserValidator.getInstance().isEmailValid(signupParameters.get(RequestParameter.EMAIL))) {
-            signupParameters.put(RequestParameter.EMAIL, "");
             flag = false;
         }
 

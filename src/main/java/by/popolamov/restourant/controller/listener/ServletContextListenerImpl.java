@@ -1,6 +1,6 @@
-package by.radzionau.imdb.controller.listener;
+package by.popolamov.restourant.controller.listener;
 
-import by.radzionau.imdb.model.pool.CustomConnectionPool;
+import by.popolamov.restourant.model.pool.CustomConnectionPool;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;

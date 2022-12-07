@@ -1,4 +1,4 @@
-package by.radzionau.imdb.controller.filter;
+package by.popolamov.restourant.controller.filter;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletRequestWrapper;

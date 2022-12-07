@@ -12,6 +12,6 @@
         <a class="nav-link active d-flex" aria-current="page" href="/login">Login</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active d-flex" aria-current="page" href="/register">Register</a>
+        <a class="nav-link active d-flex" aria-current="page" href="/signup.jsp">Register</a>
     </li>
 </ul>

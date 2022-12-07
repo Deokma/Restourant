@@ -10,8 +10,10 @@
 <head>
     <meta charset="ISO-8859-1">
     <title><fmt:message key="title.signup"/></title>
+    <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
+<jsp:include page="components/navbar.jsp"/>
 <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
 
     <div class="row bg-white shadow-sm">

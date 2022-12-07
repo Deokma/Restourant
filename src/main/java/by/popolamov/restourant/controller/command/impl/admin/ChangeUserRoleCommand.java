@@ -1,12 +1,12 @@
-package by.radzionau.imdb.controller.command.impl.admin;
+package by.popolamov.restourant.controller.command.impl.admin;
 
-import by.radzionau.imdb.controller.command.*;
-import by.radzionau.imdb.controller.command.RequestUtil;
-import by.radzionau.imdb.exception.ServiceException;
-import by.radzionau.imdb.model.entity.User;
-import by.radzionau.imdb.model.entity.UserRole;
-import by.radzionau.imdb.model.service.UserService;
-import by.radzionau.imdb.model.service.impl.UserServiceImpl;
+import by.popolamov.restourant.controller.command.*;
+import by.popolamov.restourant.controller.command.RequestUtil;
+import by.popolamov.restourant.exception.ServiceException;
+import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.entity.UserRole;
+import by.popolamov.restourant.model.service.UserService;
+import by.popolamov.restourant.model.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -1,7 +1,7 @@
-package by.radzionau.imdb.model.dao;
+package by.popolamov.restourant.model.dao;
 
-import by.radzionau.imdb.exception.DaoException;
-import by.radzionau.imdb.model.entity.User;
+import by.popolamov.restourant.exception.DaoException;
+import by.popolamov.restourant.model.entity.User;
 
 import java.util.List;
 import java.util.Optional;

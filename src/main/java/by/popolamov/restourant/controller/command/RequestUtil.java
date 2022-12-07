@@ -1,8 +1,7 @@
-package by.radzionau.imdb.controller.command;
+package by.popolamov.restourant.controller.command;
 
-import by.radzionau.imdb.exception.ServiceException;
-import by.radzionau.imdb.model.entity.FeedbackStatus;
-import by.radzionau.imdb.model.entity.MovieType;
+import by.popolamov.restourant.exception.ServiceException;
+import by.popolamov.restourant.model.entity.OrderStatus;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -71,50 +70,6 @@ public final class RequestUtil {
                     logger.error("Invalid parameter");
                     throw new ServiceException("Invalid parameter");
                 }
-            }
-        } else {
-            logger.error("Invalid parameter");
-            throw new ServiceException("Invalid parameter");
-        }
-    }
-
-    /**
-     * Gets parameter as movie type. Throws ServiceException if parameter is invalid.
-     *
-     * @param request the request
-     * @return the parameter as movie type
-     * @throws ServiceException if parameter is invalid
-     */
-    public MovieType getParameterAsMovieType(HttpServletRequest request) throws ServiceException {
-        Optional<String> parameter = getParameter(request, RequestParameter.MOVIE_TYPE);
-        if (parameter.isPresent()) {
-            try {
-                return MovieType.valueOf(parameter.get().toUpperCase());
-            } catch (IllegalArgumentException e) {
-                logger.error("Invalid parameter");
-                throw new ServiceException("Invalid parameter");
-            }
-        } else {
-            logger.error("Invalid parameter");
-            throw new ServiceException("Invalid parameter");
-        }
-    }
-
-    /**
-     * Gets parameter as feedback status. Throws ServiceException if parameter is invalid.
-     *
-     * @param request the request
-     * @return the parameter as feedback status
-     * @throws ServiceException if parameter is invalid
-     */
-    public FeedbackStatus getParameterAsFeedbackStatus(HttpServletRequest request) throws ServiceException {
-        Optional<String> parameter = getParameter(request, RequestParameter.FEEDBACK_STATUS);
-        if (parameter.isPresent()) {
-            try {
-                return FeedbackStatus.valueOf(parameter.get().toUpperCase());
-            } catch (IllegalArgumentException e) {
-                logger.error("Invalid parameter");
-                throw new ServiceException("Invalid parameter");
             }
         } else {
             logger.error("Invalid parameter");

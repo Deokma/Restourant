@@ -1,9 +1,11 @@
 package by.popolamov.restourant.model.entity;
 
+import org.apache.logging.log4j.core.jackson.ListOfMapEntrySerializer;
+
 /**
  * The enum User role entity.
  */
-public enum UserRoles {
+public enum UserRole {
     /**
      * User role.
      */
@@ -14,7 +16,20 @@ public enum UserRoles {
     ADMIN(2);
     private final int id;
 
-    UserRoles(int id) {
+    public static UserRole getById(int id) {
+        UserRole userRole = UserRole.USER;
+        switch (id) {
+            case 1:
+                userRole = UserRole.USER;
+            break;
+            case 2:
+                userRole = UserRole.ADMIN;
+                break;
+        };
+        return userRole;
+    }
+
+    UserRole(int id) {
         this.id = id;
     }
 

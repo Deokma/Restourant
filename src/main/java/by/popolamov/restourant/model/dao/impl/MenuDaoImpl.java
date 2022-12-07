@@ -1,12 +1,13 @@
-package by.radzionau.imdb.model.dao.impl;
+package by.popolamov.restourant.model.dao.impl;
 
-import by.radzionau.imdb.exception.ConnectionPoolException;
-import by.radzionau.imdb.exception.DaoException;
-import by.radzionau.imdb.model.dao.MovieDao;
-import by.radzionau.imdb.model.entity.Movie;
-import by.radzionau.imdb.model.entity.MovieType;
-import by.radzionau.imdb.model.pool.CustomConnectionPool;
-import by.radzionau.imdb.util.ImageInputStreamUtil;
+import by.popolamov.restourant.exception.ConnectionPoolException;
+import by.popolamov.restourant.exception.DaoException;
+import by.popolamov.restourant.model.dao.MenuDao;
+import by.popolamov.restourant.model.entity.Menu;
+import by.popolamov.restourant.model.entity.MenuCategory;
+import by.popolamov.restourant.model.entity.Order;
+import by.popolamov.restourant.model.pool.CustomConnectionPool;
+import by.popolamov.restourant.util.ImageInputStreamUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,59 +19,42 @@ import java.util.Optional;
 /**
  * The implementation of MovieDao interface.
  */
-public class MovieDaoImpl implements MovieDao {
-    private static final Logger logger = LogManager.getLogger(MovieDaoImpl.class);
+public class MenuDaoImpl implements MenuDao {
+    private static final Logger logger = LogManager.getLogger(MenuDaoImpl.class);
     private static final ImageInputStreamUtil inputStreamUtil = ImageInputStreamUtil.getInstance();
     private final CustomConnectionPool pool = CustomConnectionPool.getInstance();
 
-    private static final String SQL_INSERT_MOVIE =
-            "INSERT INTO movie (title, logline, release_year, movie_type_id) " +
-                    "VALUES (?,?,?,?)";
-    private static final String SQL_UPDATE_MOVIE =
-            "UPDATE movie SET title=?, logline=?, release_year=?, cover=?, movie_type_id=? " +
-                    "WHERE movie_id=?";
-    private static final String SQL_DELETE_MOVIE =
-            "DELETE FROM movie " +
-                    "WHERE movie_id=?";
-    private static final String SQL_SELECT_MOVIE_BY_ID =
-            "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS movie_type " +
-                    "FROM movie " +
-                    "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
-                    "WHERE movie_id=?";
-    private static final String SQL_SELECT_MOVIES_BY_TITLE =
-            "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS movie_type " +
-                    "FROM movie " +
-                    "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
-                    "WHERE title LIKE ?";
-    private static final String SQL_SELECT_MOVIES_BY_YEAR =
-            "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS movie_type " +
-                    "FROM movie " +
-                    "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
-                    "WHERE release_year=?";
-    private static final String SQL_SELECT_MOVIES_BY_GENRE =
-            "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS type " +
-                    "FROM movie " +
-                    "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
-                    "WHERE movie_id IN" +
-                    "(SELECT movie_id " +
-                    "FROM movie_genres " +
-                    "WHERE genre_id=?)";
+    private static final String SQL_INSERT_MENU =
+            "INSERT INTO menu (dishname, price, categoryid) " +
+                    "VALUES (?,?,?)";
+    private static final String SQL_UPDATE_MENU =
+            "UPDATE menu SET dishname=?, price=?, categoryid=?" +
+                    "WHERE dishid=?";
+    private static final String SQL_DELETE_MENU =
+            "DELETE FROM menu " +
+                    "WHERE dishid=?";
+    private static final String SQL_SELECT_BY_CATEGORY_ID =
+            "SELECT dishid,dishname, price, categoryid,image FROM menu WHERE categoryid=?";
+    private static final String SQL_SELECT_BY_DISH_ID =
+            "SELECT dishname, price, categoryid, dishid,image FROM menu WHERE dishid=?";
+    private static final String SQL_SELECT_BY_DISH_NAME =
+            "SELECT dishname, price, categoryid, dishid,image FROM menu WHERE dishname=?";
     private static final String SQL_SELECT_MOVIES_BY_MOVIE_TYPE =
             "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS movie_type " +
                     "FROM movie " +
                     "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
                     "WHERE movie.movie_type_id=?";
-    private static final String SQL_CALCULATE_MOVIE_SCORE_BY_MOVIE_ID =
-            "SELECT AVG(score) AS avg_score " +
-                    "FROM feedback " +
-                    "WHERE movie_id=? AND feedback_status_id=2";
+    private static final String SQL_CALCULATE_MENU_PRICE_BY_DISH_ID =
+            "SELECT SUM(price) AS totalsum " +
+                    "FROM order " +
+                    "WHERE dishid=?";
 
-    private MovieDaoImpl() {
+    private MenuDaoImpl() {
 
     }
 
-    private static final class MySqlMovieDaoInstanceHolder {
-        private static final MovieDao INSTANCE = new MovieDaoImpl();
+    private static final class MySqlMenuDaoInstanceHolder {
+        private static final MenuDao INSTANCE = new MenuDaoImpl();
     }
 
     /**
@@ -78,25 +62,25 @@ public class MovieDaoImpl implements MovieDao {
      *
      * @return the instance of movie dao
      */
-    public static MovieDao getInstance() {
-        return MovieDaoImpl.MySqlMovieDaoInstanceHolder.INSTANCE;
+    public static MenuDao getInstance() {
+        return MenuDaoImpl.MySqlMenuDaoInstanceHolder.INSTANCE;
     }
 
     @Override
-    public int add(Movie movie) throws DaoException {
+    public int add(Menu menu) throws DaoException {
         try (
                 Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_INSERT_MOVIE, Statement.RETURN_GENERATED_KEYS)
+                PreparedStatement statement = connection.prepareStatement(SQL_INSERT_MENU, Statement.RETURN_GENERATED_KEYS)
         ) {
-            statement.setString(1, movie.getTitle());
-            statement.setString(2, movie.getLogline());
-            statement.setInt(3, movie.getReleaseYear());
-            statement.setLong(4, movie.getMovieType().getId());
+            statement.setString(1, menu.getDishName());
+            statement.setInt(2, menu.getPrice());
+            statement.setString(3, menu.getImage());
+            statement.setInt(4, menu.getCategoryid());
             int rowsUpdate = statement.executeUpdate();
             try(ResultSet resultSet = statement.getGeneratedKeys()) {
                 if (resultSet.next()) {
-                    Long key = resultSet.getLong(1);
-                    movie.setMovieId(key);
+                    int key = resultSet.getInt(1);
+                    menu.setDishid(key);
                 }
             }
             return rowsUpdate;
@@ -107,17 +91,16 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public int update(Movie movie) throws DaoException {
+    public int update(Menu menu) throws DaoException {
         try (
                 Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_MOVIE)
+                PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_MENU)
         ) {
-            statement.setString(1, movie.getTitle());
-            statement.setString(2, movie.getLogline());
-            statement.setInt(3, movie.getReleaseYear());
-            statement.setBlob(4, inputStreamUtil.getStringAsImageInputStream(movie.getCover()));
-            statement.setLong(5, movie.getMovieType().getId());
-            statement.setLong(6, movie.getMovieId());
+            statement.setString(1, menu.getDishName());
+            statement.setInt(2, menu.getPrice());
+            statement.setString(3, menu.getImage());
+            statement.setInt(4, menu.getCategoryid());
+            statement.setLong(5, menu.getDishid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
             logger.error("Error while updating a movie", e);
@@ -126,12 +109,12 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public int delete(Movie movie) throws DaoException {
+    public int delete(Menu menu) throws DaoException {
         try (
                 Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_DELETE_MOVIE)
+                PreparedStatement statement = connection.prepareStatement(SQL_DELETE_MENU)
         ) {
-            statement.setLong(1, movie.getMovieId());
+            statement.setLong(1, menu.getDishid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
             logger.error("Error while updating a movie", e);
@@ -140,16 +123,36 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public Optional<Movie> findMovieById(Long movieId) throws DaoException {
+    public List<Menu> findMenuByCategoryId(MenuCategory categoryid) throws DaoException {
+        List<Menu> menus = new ArrayList<>();
         try (
                 Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_MOVIE_BY_ID)
+                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_CATEGORY_ID)
         ) {
-            statement.setLong(1, movieId);
+            statement.setInt(1, categoryid.toInt());
+            try(ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    menus.add(createMenu(resultSet));
+                }
+            }
+        } catch (SQLException | ConnectionPoolException e) {
+            logger.error("Error while selecting a menu", e);
+            throw new DaoException("Error while selecting a menu", e);
+        }
+        return menus;
+    }
+
+    @Override
+    public Optional<Menu> findMenuByDishId(int dishid) throws DaoException {
+        try (
+                Connection connection = pool.getConnection();
+                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_DISH_ID)
+        ) {
+            statement.setLong(1, dishid);
             try(ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    Movie movie = createMovie(resultSet);
-                    return Optional.of(movie);
+                    Menu menu = createMenu(resultSet);
+                    return Optional.of(menu);
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
@@ -160,74 +163,33 @@ public class MovieDaoImpl implements MovieDao {
     }
 
     @Override
-    public List<Movie> findMoviesByTitle(String title) throws DaoException {
-        List<Movie> movies = new ArrayList<>();
-        title = "%" + title + "%";
+    public List<Menu> findMenuByDishName(String dishname) throws DaoException {
+        List<Menu> menu = new ArrayList<>();
+        dishname = "%" + dishname + "%";
         try (
                 Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_MOVIES_BY_TITLE)
+                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_DISH_NAME)
         ) {
-            statement.setString(1, title);
+            statement.setString(1, dishname);
             try(ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
-                    movies.add(createMovie(resultSet));
+                    menu.add(createMenu(resultSet));
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
             logger.error("Error while selecting a movie", e);
             throw new DaoException("Error while selecting a movie", e);
         }
-        return movies;
+        return menu;
     }
 
-    @Override
-    public List<Movie> findMoviesByMovieType(MovieType movieType) throws DaoException {
-        List<Movie> movies = new ArrayList<>();
-        try (
-                Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_MOVIES_BY_MOVIE_TYPE)
-        ) {
-            statement.setLong(1, movieType.getId());
-            try(ResultSet resultSet = statement.executeQuery()) {
-                while (resultSet.next()) {
-                    movies.add(createMovie(resultSet));
-                }
-            }
-        } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
-        }
-        return movies;
-    }
-
-    @Override
-    public Optional<Double> findMovieScoreByMovieId(Long movieId) throws DaoException { //need check
-        try (
-                Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_CALCULATE_MOVIE_SCORE_BY_MOVIE_ID)
-        ) {
-            statement.setLong(1, movieId);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                Double score = resultSet.getDouble(1);
-                return Optional.of(score);
-            }
-        } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
-        }
-
-        return Optional.empty();
-    }
-
-    private Movie createMovie(ResultSet resultSet) throws SQLException {
-        return Movie.builder()
-                .setMovieId(resultSet.getLong(1))
-                .setTitle(resultSet.getString(2))
-                .setLogline(resultSet.getString(3))
-                .setReleaseYear(resultSet.getInt(4))
-                .setCover(resultSet.getBlob(5) == null ? null : inputStreamUtil.getImageInputStreamAsString(resultSet.getBlob(5).getBinaryStream()))
-                .setMovieType(MovieType.valueOf(resultSet.getString(6).toUpperCase()))
+    private Menu createMenu(ResultSet resultSet) throws SQLException {
+        return Menu.builder()
+                .setDishId(resultSet.getInt(1))
+                .setDishName(resultSet.getString(2))
+                .setPrice(resultSet.getInt(3))
+                .setCategoryId(resultSet.getInt(4))
+                .setImage(resultSet.getString(5))
                 .build();
     }
 }

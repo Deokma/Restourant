@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Restourant:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9acf492c-6e82-4e23-a616-7aa6adcad3d5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/DeleteOrderCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/OrderRedirectPageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/redirect/order_redirect.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Restourant_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Restourant_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/PagePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/PagePath.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestParameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Router.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/SessionAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/SessionAttribute.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/ChangeUserRoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/ChangeUserRoleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/CompleteOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/CompleteOrderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/GetUsersCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/GetUsersCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/ChangeLocaleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/ChangeLocaleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/DefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/DefaultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignInCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignOutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignOutCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignUpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignUpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/admin/MoveToOrdersPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/admin/MoveToOrdersPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToLoginPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToLoginPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToMainPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToMainPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToSignupPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToSignupPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/MoveToCartPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/MoveToCartPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/AddDishToCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/AddDishToCartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/CompleteCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/CompleteCartCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/LastPageFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/LastPageFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/PageRedirectSecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/PageRedirectSecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/RoleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/RoleFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssRequestWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssRequestWrapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssSecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssSecurityFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/HttpSessionListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/HttpSessionListenerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/ServletContextListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/ServletContextListenerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ConnectionPoolException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ConnectionPoolException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/DaoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ServiceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuOrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/OrderDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuOrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuOrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/OrderDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/OrderStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ConnectionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/CustomConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/CustomConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ProxyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ProxyConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/OrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/tag/CompanyNameTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/tag/CompanyNameTag.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/database/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/db.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/prop/pagecontent.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prop/pagecontent.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/prop/pagecontent_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prop/pagecontent_ru_RU.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/accountorders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/accountorders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/carousel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/carousel.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/key.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/key.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/logined.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/logined.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/logout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/nologin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/nologin.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Tag Library Descriptor" />
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Jsp File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://C:/Program Files/Eclipse Adoptium/jdk-17.0.3.7-hotspot/lib/src.zip!/java.sql/java/sql/DriverManager.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/Controller.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Menu.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Order.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/OrderStatus.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/User.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/UserRole.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ConnectionFactory.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/CustomConnectionPool.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ProxyConnection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/UserService.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/by/popolamov/restourant/tag/CompanyNameTag.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/database/db.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/prop/pagecontent.properties" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/resources/prop/pagecontent_ru_RU.properties" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2FJATFLYG2WyZd26D8tRKz7uq0H" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -27,9 +162,137 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "last_opened_file_path": "D:/3curse1semester/setpril/Restourant2/src/main/java/by/popolamov/restourant/controller/filter",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
+    ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="by.popolamov.restourant.controller.command" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\3curse1semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\controller\filter" />
+      <recent name="D:\3curse1semester\setpril\Restourant2\src\main\webapp" />
+      <recent name="D:\3curse1semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\model\entity" />
+      <recent name="D:\3 curse 1 semester\setpril\Restourant2\src\main\webapp" />
+      <recent name="D:\3 curse 1 semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\3 curse 1 semester\setpril\Restourant\src\main\webapp\componetns" />
+      <recent name="D:\3 curse 1 semester\setpril\Restourant\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.popolamov.restourant.controller.command.impl.admin" />
+      <recent name="by.popolamov.restourant.controller.command.impl.user" />
+      <recent name="by.popolamov.restourant.controller.command.impl.moveto.general" />
+      <recent name="by.popolamov.restourant.controller.command.impl.moveto.admin" />
+      <recent name="by.popolamov.restourant.controller.command.impl.moveto.user" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="openRunningConfigInTab" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 10.0.27" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.27" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="37cae5b9-e8b2-4949-9172-aafa37fbc09c" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Restourant:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="90f64363-d38d-4e5f-8d53-78a047d37400" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="62367" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Restourant:war exploded" />
+        </option>
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -38,7 +301,61 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1664199823877</updated>
-      <workItem from="1664199825034" duration="1000" />
+      <workItem from="1664199825034" duration="4119000" />
+      <workItem from="1664269953825" duration="3902000" />
+      <workItem from="1664274175473" duration="454000" />
+      <workItem from="1664382177842" duration="23000" />
+      <workItem from="1664625235277" duration="5647000" />
+      <workItem from="1664639369856" duration="17082000" />
+      <workItem from="1664722544615" duration="1255000" />
+      <workItem from="1664787662059" duration="5575000" />
+      <workItem from="1664795366167" duration="205000" />
+      <workItem from="1664867544972" duration="1568000" />
+      <workItem from="1664877079506" duration="18534000" />
+      <workItem from="1664960293508" duration="6472000" />
+      <workItem from="1665075112487" duration="619000" />
+      <workItem from="1665128028688" duration="18000" />
+      <workItem from="1665134442689" duration="4825000" />
+      <workItem from="1665162266243" duration="1332000" />
+      <workItem from="1665226198813" duration="10372000" />
+      <workItem from="1665307589987" duration="11521000" />
+      <workItem from="1665333239084" duration="599000" />
+      <workItem from="1665386306821" duration="5884000" />
+      <workItem from="1665405297704" duration="6516000" />
+      <workItem from="1665613744549" duration="1028000" />
+      <workItem from="1665646426807" duration="29000" />
+      <workItem from="1665911857601" duration="46000" />
+      <workItem from="1665911922536" duration="54000" />
+      <workItem from="1665912324251" duration="1496000" />
+      <workItem from="1666107242462" duration="1260000" />
+      <workItem from="1666517239417" duration="16278000" />
+      <workItem from="1666602274159" duration="587000" />
+      <workItem from="1666949042874" duration="1955000" />
+      <workItem from="1667145019219" duration="1893000" />
+      <workItem from="1667161505797" duration="12856000" />
+      <workItem from="1667646370295" duration="4377000" />
+      <workItem from="1667727980449" duration="1799000" />
+      <workItem from="1667807314094" duration="4948000" />
+      <workItem from="1667940994281" duration="19000" />
+      <workItem from="1668264829907" duration="126000" />
+      <workItem from="1668953333493" duration="14646000" />
+      <workItem from="1669028596918" duration="494000" />
+      <workItem from="1669476732277" duration="2638000" />
+      <workItem from="1669550696042" duration="3055000" />
+      <workItem from="1669554613673" duration="2109000" />
+      <workItem from="1669624708653" duration="968000" />
+      <workItem from="1669626683913" duration="141000" />
+      <workItem from="1669627169010" duration="505000" />
+      <workItem from="1669627751070" duration="1662000" />
+      <workItem from="1669629666757" duration="2158000" />
+      <workItem from="1669642128822" duration="1018000" />
+      <workItem from="1669665879427" duration="12913000" />
+      <workItem from="1669759182915" duration="31000" />
+      <workItem from="1669800149244" duration="1793000" />
+      <workItem from="1670085875527" duration="53923000" />
+      <workItem from="1670261980769" duration="13556000" />
+      <workItem from="1670320724694" duration="3557000" />
+      <workItem from="1670344394039" duration="55419000" />
     </task>
     <servers />
   </component>
@@ -55,5 +372,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="by.popolamov.restourant.controller.filter.XssRequestWrapper" memberName="request" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="username" language="JAVA" />
+        <watch expression="((Controller)this).commandProvider" language="JAVA" custom="by.popolamov.restourant.controller.Controller" />
+        <watch expression="this" />
+        <watch expression="username" language="JAVA" />
+        <watch expression="username" language="JAVA" />
+        <watch expression="request" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -1,12 +1,11 @@
-package by.radzionau.imdb.model.dao.impl;
+package by.popolamov.restourant.model.dao.impl;
 
-import by.radzionau.imdb.exception.ConnectionPoolException;
-import by.radzionau.imdb.exception.DaoException;
-import by.radzionau.imdb.model.dao.UserDao;
-import by.radzionau.imdb.model.entity.User;
-import by.radzionau.imdb.model.entity.UserRole;
-import by.radzionau.imdb.model.entity.UserStatus;
-import by.radzionau.imdb.model.pool.CustomConnectionPool;
+import by.popolamov.restourant.exception.ConnectionPoolException;
+import by.popolamov.restourant.exception.DaoException;
+import by.popolamov.restourant.model.dao.UserDao;
+import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.entity.UserRole;
+import by.popolamov.restourant.model.pool.CustomConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -23,44 +22,32 @@ public class UserDaoImpl implements UserDao {
     private final CustomConnectionPool pool = CustomConnectionPool.getInstance();
 
     private static final String SQL_INSERT_USER =
-            "INSERT INTO usr (login, password, mail, first_name, surname, usr_role_id, usr_status_id) " +
-                    "VALUES (?,?,?,?,?,?,?)";
+            "INSERT INTO users (login, password, firstname, lastname, roleid) " +
+                    "VALUES (?,?,?,?,?)";
     private static final String SQL_UPDATE_USER =
-            "UPDATE usr SET login=?, mail=?, first_name=?, surname=?, usr_role_id=?, usr_status_id=? " +
-                    "WHERE usr_id=?";
+            "UPDATE users SET login=?, firstname=?, lastname=?, roleid=?," +
+                    "WHERE userid=?";
     private static final String SQL_SELECT_USER_BY_ID =
-            "SELECT usr_id, login, mail, first_name, surname, usr_role.name AS role_name, usr_status.name AS user_status " +
-                    "FROM usr " +
-                    "JOIN usr_role ON usr_role.usr_role_id=usr.usr_role_id " +
-                    "JOIN usr_status ON usr_status.usr_status_id=usr.usr_status_id " +
-                    "WHERE usr_id=?";
+            "SELECT userid, login, firstname, lastname, roleid.name AS role_name " +
+                    "FROM users " +
+                    "JOIN roles ON roles.roleid=user.roleid " +
+                    "WHERE userid=?";
     private static final String SQL_SELECT_USER_BY_LOGIN =
-            "SELECT usr_id, login, mail, first_name, surname, usr_role.name AS role_name, usr_status.name AS user_status " +
-                    "FROM usr " +
-                    "JOIN usr_role ON usr_role.usr_role_id=usr.usr_role_id " +
-                    "JOIN usr_status ON usr_status.usr_status_id=usr.usr_status_id " +
-                    "WHERE login=?";
+            "SELECT userid, login, firstName, lastName, roleid FROM users" +
+            " WHERE login=?";
     private static final String SQL_SELECT_USER_PASSWORD_BY_LOGIN =
             "SELECT password " +
-                    "FROM usr " +
+                    "FROM users " +
                     "WHERE login=?";
-    private static final String SQL_SELECT_USERS_BY_STATUS =
-            "SELECT usr_id, login, mail, first_name, surname, usr_role.name AS role_name, usr_status.name AS user_status " +
-                    "FROM usr " +
-                    "JOIN usr_role ON usr_role.usr_role_id=usr.usr_role_id " +
-                    "JOIN usr_status ON usr_status.usr_status_id=usr.usr_status_id " +
-                    "WHERE usr.usr_status_id=?";
     private static final String SQL_SELECT_USERS_BY_ROLE =
-            "SELECT usr_id, login, mail, first_name, surname, usr_role.name AS role_name, usr_status.name AS user_status " +
-                    "FROM usr " +
-                    "JOIN usr_role ON usr_role.usr_role_id=usr.usr_role_id " +
-                    "JOIN usr_status ON usr_status.usr_status_id=usr.usr_status_id " +
-                    "WHERE usr.usr_role_id=?";
+            "SELECT userid, login, firstName, lastName, roles.name AS role_name " +
+                    "FROM users " +
+                    "JOIN roles ON roles.roleid=users.roleid " +
+                    "WHERE users.roleid=?";
     private static final String SQL_SELECT_ALL_USERS =
-            "SELECT usr_id, login, mail, first_name, surname, usr_role.name AS role_name, usr_status.name AS user_status " +
-                    "FROM usr " +
-                    "JOIN usr_role ON usr_role.usr_role_id=usr.usr_role_id " +
-                    "JOIN usr_status ON usr_status.usr_status_id=usr.usr_status_id ";
+            "SELECT user, login, firstName, lastName, roles.name AS role_name " +
+                    "FROM users " +
+                    "JOIN roles ON roles.roleid=users.userid ";
 
     private static final class MySqlUserDaoInstanceHolder {
         private static final UserDaoImpl INSTANCE = new UserDaoImpl();
@@ -83,15 +70,13 @@ public class UserDaoImpl implements UserDao {
         ) {
             statement.setString(1, user.getLogin());
             statement.setString(2, hashedPassword);
-            statement.setString(3, user.getEmail());
-            statement.setString(4, user.getName());
-            statement.setString(5, user.getSurname());
-            statement.setLong(6, user.getRole().getId());
-            statement.setLong(7, user.getStatus().getId());
+            statement.setString(3, user.getFirstName());
+            statement.setString(4, user.getLastName());
+            statement.setLong(5, user.getRole().getId());
             int rowsUpdate = statement.executeUpdate();
             try(ResultSet resultSet = statement.getGeneratedKeys()) {
                 if (resultSet.next()) {
-                    Long key = resultSet.getLong(1);
+                    int key = resultSet.getInt(1);
                     user.setUserId(key);
                 }
             }
@@ -109,12 +94,10 @@ public class UserDaoImpl implements UserDao {
                 PreparedStatement statement = connection.prepareStatement(SQL_UPDATE_USER)
         ) {
             statement.setString(1, user.getLogin());
-            statement.setString(2, user.getEmail());
-            statement.setString(3, user.getName());
-            statement.setString(4, user.getSurname());
-            statement.setLong(5, user.getRole().getId());
-            statement.setLong(6, user.getStatus().getId());
-            statement.setLong(7, user.getUserId());
+            statement.setString(2, user.getFirstName());
+            statement.setString(3, user.getLastName());
+            statement.setLong(4, user.getRole().getId());
+            statement.setLong(5, user.getUserId());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
             logger.error("Error while updating a user={}", user, e);
@@ -181,13 +164,12 @@ public class UserDaoImpl implements UserDao {
 
     private User createUser(ResultSet resultSet) throws SQLException {
         return User.builder()
-                .setUserId(resultSet.getLong(1))
+                .setUserId(resultSet.getInt(1))
                 .setLogin(resultSet.getString(2))
-                .setEmail(resultSet.getString(3))
-                .setName(resultSet.getString(4))
-                .setSurname(resultSet.getString(5))
-                .setRole(UserRole.valueOf(resultSet.getString(6).toUpperCase()))
-                .setStatus(UserStatus.valueOf(resultSet.getString(7).toUpperCase()))
+                .setFirstName(resultSet.getString(3))
+                .setLastName(resultSet.getString(4))
+                .setRole(UserRole.getById(resultSet.getInt(5)))
+                //.setRole(UserRole.valueOf(resultSet.getString(5).toUpperCase()))
                 .build();
     }
 }

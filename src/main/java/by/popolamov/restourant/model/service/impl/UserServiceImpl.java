@@ -1,15 +1,12 @@
-package by.popolamov.restourant.service.impl;
+package by.popolamov.restourant.model.service.impl;
 
 import by.popolamov.restourant.model.dao.UserDao;
 import by.popolamov.restourant.model.dao.impl.UserDaoImpl;
-import by.popolamov.restourant.service.UserService;
+import by.popolamov.restourant.model.service.UserService;
 import by.popolamov.restourant.exception.DaoException;
 import by.popolamov.restourant.exception.ServiceException;
-import by.popolamov.restourant.model.dao.UserDao;
-import by.popolamov.restourant.model.dao.impl.UserDaoImpl;
 import by.popolamov.restourant.model.entity.User;
 import by.popolamov.restourant.model.entity.UserRole;
-import by.popolamov.restourant.model.service.UserService;
 import by.popolamov.restourant.util.security.PasswordEncryptor;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -93,8 +90,7 @@ public class UserServiceImpl implements UserService {
             throw new ServiceException("User role doesn't present");
         }
 
-        User updatedUser = buildUser(user.getUserId(), user.getLogin(),
-                user.getFirstName(), user.getSurname(), userRole);
+        User updatedUser = buildUser(user.getUserId(), user.getLogin(), user.getFirstName(), user.getLastName(), user.getRole());
         try {
             userDao.update(updatedUser);
         } catch (DaoException e) {
@@ -136,13 +132,12 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
-    private User buildUser(Long userId, String login, String email, String name, String surname, UserRole role) {
+    private User buildUser(int userId, String login, String firstName, String lastName, UserRole role) {
         return User.builder()
                 .setUserId(userId)
                 .setLogin(login)
-                .setEmail(email)
-                .setName(name)
-                .setSurname(surname)
+                .setFirstName(firstName)
+                .setLastName(lastName)
                 .setRole(role)
                 .build();
     }

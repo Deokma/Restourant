@@ -13,11 +13,11 @@
 <fmt:setBundle basename="prop.pagecontent"/>
 <html>
 <head>
-    <title>Account</title>
+    <title>Profile</title>
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
-<jsp:include page="components/navbar.jsp"/>
+<jsp:include page="pages/components/navbar.jsp"/>
 <div class="row justify-content-center">
     <div class="col-8">
         <h1>Profile</h1>
@@ -27,32 +27,32 @@
     <div class="row">
         <div class="col-md-9 bg-light p-5 border">
             <h2>🧾My Orders:</h2>
-            <div class="container text-center">
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 bg-info rounded-top">
-                    <div class="col border border-dark"><h6>Order Number:</h6></div>
-                    <div class="col border border-dark"><h6>Sum:</h6></div>
-                    <div class="col border border-dark"><h6>Status:</h6></div>
-                </div>
-            </div>
-            <c:forEach items="${order_list}" var="order" varStatus="status">
-                <c:if test="${order.getUserid() == user.getUserId()}">
-                    <form class="" action="${pageContext.request.contextPath}/controller">
-                        <div class="container text-center">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 bg-light">
-                                <input type="hidden" name="orderid" value="${order}">
-                                <div class="border border-dark">${order.getOrderid()}</div>
-                                <div class="border border-dark">${order.getTotalsum()} б. р.</div>
-                                <c:if test="${order.getStatusString() == \"INPROGRESS\" }" >
-                                <div class="border border-dark text-danger">${order.getStatusString()}</div>
-                                </c:if>
-                                <c:if test="${order.getStatusString() == \"COMPLETE\" }" >
-                                    <div class="border border-dark text-success">${order.getStatusString()}</div>
-                                </c:if>
-                            </div>
-                        </div>
-                    </form>
-                </c:if>
-            </c:forEach>
+            <table class="table container bg-light">
+                <thead>
+                <tr>
+                    <th scope="col">Order Number</th>
+                    <th scope="col">Sum</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <c:forEach items="${order_list}" var="order" varStatus="status">
+                    <c:if test="${order.getUserid() == user.getUserId()}">
+                        <tr>
+                            <td>${order.getOrderid()}</td>
+                            <td>${order.getTotalsum()} б. р.</td>
+                            <c:if test="${order.getStatusString() == \"COMPLETE\" }">
+                                <td class="text-success">${order.getStatusString()}</td>
+                            </c:if>
+                            <c:if test="${order.getStatusString() == \"INPROGRESS\" }">
+                                <td class="text-danger">${order.getStatusString()}</td>
+                            </c:if>
+                        </tr>
+                    </c:if>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

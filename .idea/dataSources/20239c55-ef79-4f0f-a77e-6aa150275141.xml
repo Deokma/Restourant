@@ -809,17 +809,17 @@ sequence|table|32802|32803|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
-    <database id="3" parent="1" name="imdb">
-      <ObjectId>41032</ObjectId>
-      <OwnerName>postgres</OwnerName>
-    </database>
-    <database id="4" parent="1" name="postgres">
+    <database id="3" parent="1" name="postgres">
       <Comment>default administrative connection database</Comment>
       <ObjectId>13754</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
-    <database id="5" parent="1" name="test1">
+    <database id="4" parent="1" name="test1">
       <ObjectId>24577</ObjectId>
+      <OwnerName>postgres</OwnerName>
+    </database>
+    <database id="5" parent="1" name="imdb">
+      <ObjectId>41032</ObjectId>
       <OwnerName>postgres</OwnerName>
     </database>
     <role id="6" parent="1" name="pg_database_owner">

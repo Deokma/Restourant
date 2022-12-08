@@ -13,11 +13,10 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
     <title>KFC</title>
-    <%@ include file="components/head.jsp" %>
 </head>
 <body>
-<jsp:include page="components/navbar.jsp"/>
-<jsp:include page="components/carousel.jsp"/>
+<jsp:include page="pages/components/navbar.jsp"/>
+<jsp:include page="pages/components/carousel.jsp"/>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <c:forEach items="${menu_list}" var="menu" varStatus="status">
@@ -39,17 +38,15 @@
                         <h3>${menu.getPrice()}</h3><h4 class="text-muted">б. р.</h4>
                         <c:choose>
                             <c:when test="${role == 'ADMIN' || role == 'USER'}">
-<%--                                <input type="hidden" name="command" value="add_dish_to_cart">--%>
-<%--                                <a class="btn btn-dark ms-3" href=""></a>--%>
-                                    <form class="d-flex" action="${pageContext.request.contextPath}/controller">
-                                        <input type="hidden" name="userid" value="${user.getUserId()}">
-                                        <input type="hidden" name="dishid" value="${menu.getDishid()}">
-                                        <input type="hidden" name="price" value="${menu.getPrice()}">
-                                        <input type="hidden" name="command" value="add_dish_to_cart">
-                                        <button class="btn btn-dark ms-3" type="submit">
-                                            <fmt:message key="get_menu.text.menu.add.to.cart.button"/>
-                                        </button>
-                                    </form>
+                                <form class="d-flex" action="${pageContext.request.contextPath}/controller">
+                                    <input type="hidden" name="userid" value="${user.getUserId()}">
+                                    <input type="hidden" name="dishid" value="${menu.getDishid()}">
+                                    <input type="hidden" name="price" value="${menu.getPrice()}">
+                                    <input type="hidden" name="command" value="add_dish_to_cart">
+                                    <button class="btn btn-dark ms-3" type="submit">
+                                        <fmt:message key="get_menu.text.menu.add.to.cart.button"/>
+                                    </button>
+                                </form>
                             </c:when>
                             <c:otherwise>
                                 <fmt:message key="get_menu_list.sign.in.to.add.to.cart"/>
@@ -61,6 +58,5 @@
         </c:forEach>
     </div>
 </div>
-<jsp:include page="components/footer.jsp"/>
 </body>
 </html>

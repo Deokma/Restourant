@@ -5,7 +5,8 @@
 <fmt:setBundle basename="prop.pagecontent"/>
 <!DOCTYPE html>
 <link href="css/login.css" rel="stylesheet" type="text/css">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 <html>
 <head>
     <meta charset="ISO-8859-1">
@@ -13,7 +14,7 @@
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
-<jsp:include page="components/navbar.jsp"/>
+<jsp:include page="pages/components/navbar.jsp"/>
 <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
 
     <div class="row bg-white shadow-sm">
@@ -26,31 +27,39 @@
                     <label for="floatingLogin">
                         <fmt:message key="signup.label.login"/>
                     </label>
-                    <input type="text" class="form-control" name="login" id="floatingLogin" placeholder="<fmt:message key="signup.label.login"/>" name="login" <c:if test="${not empty login}">value="${login}"</c:if> aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="login" id="floatingLogin"
+                           placeholder="<fmt:message key="signup.label.login"/>" name="login"
+                           <c:if test="${not empty login}">value="${login}"</c:if> aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="floatingFirstName">
                         <fmt:message key="signup.label.firstname"/>
                     </label>
-                    <input type="text" class="form-control" name="firstname" id="floatingFirstName" placeholder="<fmt:message key="signup.label.firstname"/>" <c:if test="${not empty firstname}">value="${firstname}"</c:if> aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="firstname" id="floatingFirstName"
+                           placeholder="<fmt:message key="signup.label.firstname"/>"
+                           <c:if test="${not empty firstname}">value="${firstname}"</c:if> aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="floatingLastName">
                         <fmt:message key="signup.label.lastname"/>
                     </label>
-                    <input type="text" class="form-control" name="lastname" id="floatingLastName" placeholder="<fmt:message key="signup.label.lastname"/>" <c:if test="${not empty lastname}">value="${lastname}"</c:if> aria-describedby="emailHelp">
+                    <input type="text" class="form-control" name="lastname" id="floatingLastName"
+                           placeholder="<fmt:message key="signup.label.lastname"/>"
+                           <c:if test="${not empty lastname}">value="${lastname}"</c:if> aria-describedby="emailHelp">
                 </div>
                 <div class="form-group">
                     <label for="floatingPassword">
                         <fmt:message key="signup.label.password"/>
                     </label>
-                    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="<fmt:message key="signup.label.password"/>">
+                    <input type="password" class="form-control" name="password" id="floatingPassword"
+                           placeholder="<fmt:message key="signup.label.password"/>">
                 </div>
                 <div class="form-group">
                     <label for="floatingRepeatPassword">
                         <fmt:message key="signup.label.repeat.password"/>
                     </label>
-                    <input type="password" class="form-control" id="floatingRepeatPassword" placeholder="<fmt:message key="signup.label.password"/>" name="repeated_password">
+                    <input type="password" class="form-control" id="floatingRepeatPassword"
+                           placeholder="<fmt:message key="signup.label.password"/>" name="repeated_password">
                 </div>
                 <c:if test="${not empty error_message}">
                     <div class="badge bg-danger text-wrap" style="width: 6rem;">
@@ -65,12 +74,16 @@
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script type="text/javascript">
     var storedHash = window.location.hash;
+
     function changeHashOnLoad() {
         window.location.hash = "1";
     }
+
     window.onhashchange = function () {
         window.location.hash = storedHash;
     }

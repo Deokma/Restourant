@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <meta http-equiv="refresh" url=http://localhost:8080/controller?command=move_to_orders_page">
+  <meta http-equiv="refresh" url=http://localhost:8080/controller?command=move_to_cart_page">
 </head>
 <body>
 

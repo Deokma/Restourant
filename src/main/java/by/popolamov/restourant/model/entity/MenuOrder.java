@@ -135,6 +135,10 @@ public class MenuOrder {
             menuOrder.setUserid(userid);
             return this;
         }
+        public MenuOrder.Builder setOrderId(int orderId) {
+            menuOrder.setOrderid(orderId);
+            return this;
+        }
 //        /**
 //         * Sets title.
 //         *

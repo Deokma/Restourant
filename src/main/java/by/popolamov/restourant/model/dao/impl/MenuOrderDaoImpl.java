@@ -4,10 +4,7 @@ import by.popolamov.restourant.exception.ConnectionPoolException;
 import by.popolamov.restourant.exception.DaoException;
 import by.popolamov.restourant.model.dao.MenuDao;
 import by.popolamov.restourant.model.dao.MenuOrderDao;
-import by.popolamov.restourant.model.entity.Menu;
-import by.popolamov.restourant.model.entity.MenuOrder;
-import by.popolamov.restourant.model.entity.Order;
-import by.popolamov.restourant.model.entity.User;
+import by.popolamov.restourant.model.entity.*;
 import by.popolamov.restourant.model.pool.CustomConnectionPool;
 import by.popolamov.restourant.util.ImageInputStreamUtil;
 import org.apache.logging.log4j.LogManager;
@@ -39,7 +36,7 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                     "WHERE dishid=?";
     private static final String SQL_DELETE_MENU_ORDER =
             "DELETE FROM menuorder " +
-                    "WHERE dishid=?";
+                    "WHERE userid=?";
     private static final String SQL_SELECT_BY_DISH_ID =
             "SELECT dishid, dishname FROM menu WHERE dishid=?";
     private static final String SQL_SELECT_BY_ORDER_ID =
@@ -50,10 +47,12 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
             "SELECT dishname, price FROM menuorder";
     private static final String SQL_SEND_ORDER =
             "INSERT INTO \"order\" (orderid, userid, totalsum, status) " +
-                    "SELECT max(orderid)+1, userid, SUM(price), 2 " +
+                    "SELECT max(orderid), userid, SUM(price), 2 " +
                     "FROM menuorder " +
                     "WHERE userid=? " +
                     "GROUP BY orderid ";
+    private static final String SQL_SELECT_BY_QUENTITY =
+            "SELECT orderid,dishid, userid, dishname, price FROM menuorder WHERE quentity=?";
 //    private static final String SQL_CALCULATE_ORDER_2 =
 //            "SELECT SUM(price) AS totalsum " +
 //                    "FROM order " +
@@ -125,7 +124,7 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                 Connection connection = pool.getConnection();
                 PreparedStatement statement = connection.prepareStatement(SQL_DELETE_MENU_ORDER)
         ) {
-            statement.setLong(1, menuOrder.getDishid());
+            statement.setInt(1, menuOrder.getUserid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
             logger.error("Error while updating a movie", e);
@@ -172,6 +171,25 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
         }
         return null;
     }
+    @Override
+    public List<MenuOrder> findCartByQuentity(MenuOrderQuantity menuOrderQuantity) throws DaoException {
+        List<MenuOrder> menuOrders = new ArrayList<>();
+        try (
+                Connection connection = pool.getConnection();
+                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_QUENTITY)
+        ) {
+            statement.setInt(1, menuOrderQuantity.toInt());
+            try(ResultSet resultSet = statement.executeQuery()) {
+                while (resultSet.next()) {
+                    menuOrders.add(createOrderQuentity(resultSet));
+                }
+            }
+        } catch (SQLException | ConnectionPoolException e) {
+            logger.error("Error while selecting a menu", e);
+            throw new DaoException("Error while selecting a menu", e);
+        }
+        return menuOrders;
+    }
 
     @Override
     public Optional<MenuOrder> findMenuOrderByUserId(int userid) throws DaoException {
@@ -196,6 +214,15 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
     private MenuOrder createOrderMenu(ResultSet resultSet) throws SQLException {
         return MenuOrder.builder()
                 .setUserid(resultSet.getInt(1))
+                .build();
+    }
+    private MenuOrder createOrderQuentity(ResultSet resultSet) throws SQLException {
+        return MenuOrder.builder()
+                .setOrderId(resultSet.getInt(1))
+                .setDishId(resultSet.getInt(2))
+                .setUserid(resultSet.getInt(3))
+                .setDishName(resultSet.getString(4))
+                .setPrice(resultSet.getInt(5))
                 .build();
     }
     private MenuOrder createCartMenu(ResultSet resultSet) throws SQLException {

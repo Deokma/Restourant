@@ -30,11 +30,15 @@ public class CompleteOrderCommand implements Command {
             int orderid = requestUtil.getParameterAsInt(request, RequestParameter.ORDER_ID);
             Order order = orderService.findOrderByIdOrderClass(orderid);
             orderService.update(order);
+            List<Order> ordersList = new ArrayList<>();
+            ordersList.addAll(orderService.findOrderByOrderStatus(OrderStatus.INPROGRESS));
+            ordersList.addAll(orderService.findOrderByOrderStatus(OrderStatus.COMPLETE));
+            request.setAttribute(RequestAttribute.ORDER_LIST, ordersList);
             router = new Router(PagePath.ORDERS_PAGE.getAddress(), Router.RouterType.FORWARD);
         } catch (ServiceException e) {
             logger.error("Error at CompleteOrderCommand", e);
             String pageTo = getPageFrom(request);
-            router = new Router(PagePath.ORDER_REDIRECT_PAGE.getAddress(), Router.RouterType.FORWARD);
+            router = new Router(pageTo, Router.RouterType.FORWARD);
         }
         return router;
     }

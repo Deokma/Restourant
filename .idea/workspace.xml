@@ -9,97 +9,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9acf492c-6e82-4e23-a616-7aa6adcad3d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/DeleteOrderCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/OrderRedirectPageCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/redirect/order_redirect.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Restourant_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Restourant_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="9acf492c-6e82-4e23-a616-7aa6adcad3d5" name="Changes" comment="main">
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/CartRedirectPageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/MoveToAccountPageCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuOrderQuantity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/redirect/cart_redirect.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/20239c55-ef79-4f0f-a77e-6aa150275141.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/20239c55-ef79-4f0f-a77e-6aa150275141.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/20239c55-ef79-4f0f-a77e-6aa150275141/storage_v2/_src_/database/cursework.oy7rKA/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/20239c55-ef79-4f0f-a77e-6aa150275141/storage_v2/_src_/database/cursework.oy7rKA/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Command.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/CommandType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/PagePath.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/PagePath.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestParameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestParameter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/RequestUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Router.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/Router.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/SessionAttribute.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/SessionAttribute.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/ChangeUserRoleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/ChangeUserRoleCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/CompleteOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/CompleteOrderCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/GetUsersCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/GetUsersCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/ChangeLocaleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/ChangeLocaleCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/DefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/DefaultCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignInCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignInCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignOutCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignOutCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignUpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/general/SignUpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/DeleteOrderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/DeleteOrderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/admin/GetUsersCommand.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/admin/MoveToOrdersPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/admin/MoveToOrdersPageCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToLoginPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToLoginPageCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToMainPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToMainPageCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToSignupPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/general/MoveToSignupPageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/MoveToCartPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/MoveToCartPageCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/user/OrderRedirectPageCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/moveto/admin/OrderRedirectPageCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/AddDishToCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/AddDishToCartCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/CompleteCartCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/command/impl/user/CompleteCartCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/LastPageFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/LastPageFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/PageRedirectSecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/PageRedirectSecurityFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/RoleFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/RoleFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssRequestWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssRequestWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssSecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/filter/XssSecurityFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/HttpSessionListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/HttpSessionListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/ServletContextListenerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/controller/listener/ServletContextListenerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ConnectionPoolException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ConnectionPoolException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/DaoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ServiceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/exception/ServiceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuOrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/MenuOrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuOrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/MenuOrderDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/OrderDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/OrderDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/dao/impl/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuCategory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/MenuOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/OrderStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/OrderStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/entity/UserRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ConnectionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ConnectionFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/CustomConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/CustomConnectionPool.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ProxyConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/pool/ProxyConnection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/MenuService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/MenuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/model/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/tag/CompanyNameTag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/by/popolamov/restourant/tag/CompanyNameTag.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/prop/pagecontent.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prop/pagecontent.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/prop/pagecontent_ru_RU.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/prop/pagecontent_ru_RU.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/account.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/accountorders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/accountorders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/accountorders.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/components/carousel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/carousel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/key.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/key.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/logined.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/logined.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/logout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/logout.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/components/nologin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/components/nologin.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/orders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/orders.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/redirect/order_redirect.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/redirect/order_redirect.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/signup.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,10 +56,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Tag Library Descriptor" />
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -165,11 +110,11 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "last_opened_file_path": "D:/3curse1semester/setpril/Restourant2/src/main/java/by/popolamov/restourant/controller/filter",
+    "last_opened_file_path": "D:/3curse1semester/setpril/Restourant2/src/main/webapp/pages/redirect",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -182,22 +127,22 @@
       <recent name="by.popolamov.restourant.controller.command" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\3curse1semester\setpril\Restourant2\src\main\webapp\pages\redirect" />
       <recent name="D:\3curse1semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\controller\filter" />
       <recent name="D:\3curse1semester\setpril\Restourant2\src\main\webapp" />
       <recent name="D:\3curse1semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\model\entity" />
       <recent name="D:\3 curse 1 semester\setpril\Restourant2\src\main\webapp" />
-      <recent name="D:\3 curse 1 semester\setpril\Restourant2\src\main\java\by\popolamov\restourant\controller" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\3 curse 1 semester\setpril\Restourant\src\main\webapp\componetns" />
       <recent name="D:\3 curse 1 semester\setpril\Restourant\src\main\webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="by.popolamov.restourant.controller.command.impl.moveto.user" />
       <recent name="by.popolamov.restourant.controller.command.impl.admin" />
       <recent name="by.popolamov.restourant.controller.command.impl.user" />
       <recent name="by.popolamov.restourant.controller.command.impl.moveto.general" />
       <recent name="by.popolamov.restourant.controller.command.impl.moveto.admin" />
-      <recent name="by.popolamov.restourant.controller.command.impl.moveto.user" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -355,8 +300,17 @@
       <workItem from="1670085875527" duration="53923000" />
       <workItem from="1670261980769" duration="13556000" />
       <workItem from="1670320724694" duration="3557000" />
-      <workItem from="1670344394039" duration="55419000" />
+      <workItem from="1670344394039" duration="66187000" />
+      <workItem from="1670451402619" duration="8289000" />
     </task>
+    <task id="LOCAL-00001" summary="main">
+      <created>1670430410341</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670430410341</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -372,6 +326,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="main" />
+    <option name="LAST_COMMIT_MESSAGE" value="main" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

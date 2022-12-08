@@ -4,9 +4,15 @@
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
+            <img src="https://sun9-69.userapi.com/impg/O1t0CCf9pLRwVONzpVeYH8UjgQInbPiY2XF7FQ/59wjiMk4euE.jpg?size=2560x1080&quality=96&sign=c1c7b3768e9b2e2eb96b4d4caa1bc073&type=album" class="d-block w-100 rounded-5" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item">
             <img src="https://sun9-47.userapi.com/impg/4ABZ38JDnUAjs8EBg7rPm6jgxrKjVDVZbpX3hA/Y0khbkFy4_w.jpg?size=2560x1080&quality=96&sign=15309f2a34eea60617ee9844d0e923c6&type=album" class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>

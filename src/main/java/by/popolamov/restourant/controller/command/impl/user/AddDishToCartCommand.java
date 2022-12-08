@@ -14,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -33,17 +34,9 @@ public class AddDishToCartCommand implements Command {
             int userid = requestUtil.getParameterAsInt(request, SessionAttribute.USER_ID);
             int price = requestUtil.getParameterAsInt(request, RequestParameter.PRICE);
             User user = (User) request.getSession().getAttribute(SessionAttribute.USER);
-//            MenuOrder menuOrderBuilder = MenuOrder.builder()
-//                    .setDishId(dishid)
-//                    .setUserid(userid)
-//                    .setPrice(price)
-//                    .build();
+
             MenuOrder menuOrder = buildCart(user,dishid,price);
             menuOrderService.add(menuOrder);
-            //MenuOrder menuOrder = buildCart(userid, dishid, price);
-            //menuOrderService.add(menuOrder);
-            //request.setAttribute(RequestAttribute.CART_LIST, );
-
             router = new Router(PagePath.INDEX_PAGE.getAddress(), Router.RouterType.FORWARD);
         } catch (ServiceException e) {
             logger.error("Error at AddDishToCartCommand", e);

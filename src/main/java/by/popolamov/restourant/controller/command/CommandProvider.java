@@ -10,10 +10,12 @@ import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToOrders
 import by.popolamov.restourant.controller.command.impl.moveto.general.MoveToLoginPageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.general.MoveToMainPageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.general.MoveToSignupPageCommand;
+import by.popolamov.restourant.controller.command.impl.moveto.user.CartRedirectPageCommand;
+import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToAccountPageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToCartPageCommand;
 import by.popolamov.restourant.controller.command.impl.user.AddDishToCartCommand;
 import by.popolamov.restourant.controller.command.impl.user.CompleteCartCommand;
-import by.popolamov.restourant.controller.command.impl.moveto.user.OrderRedirectPageCommand;
+import by.popolamov.restourant.controller.command.impl.moveto.admin.OrderRedirectPageCommand;
 //import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToAddFeedbackPageCommand;
 //import by.popolamov.restourant.controller.command.impl.user.AddFeedbackCommand;
 
@@ -73,9 +75,10 @@ public class CommandProvider {
     }
 
     private void addAdminCommands() {
-        commands.put(CommandType.GET_USERS, new GetUsersCommand());
+        //commands.put(CommandType.GET_USERS, new GetUsersCommand());
         commands.put(CommandType.CHANGE_USER_ROLE, new ChangeUserRoleCommand());
         commands.put(CommandType.MOVE_TO_ORDERS_PAGE, new MoveToOrdersPageCommand());
+        commands.put(CommandType.MOVE_TO_ACCOUNT_PAGE, new MoveToAccountPageCommand());
         commands.put(CommandType.COMPLETE_ORDER, new CompleteOrderCommand());
         commands.put(CommandType.ORDER_REDIRECT_PAGE, new OrderRedirectPageCommand());
         commands.put(CommandType.DELETE_ORDER, new DeleteOrderCommand());
@@ -84,7 +87,9 @@ public class CommandProvider {
     private void addUserCommands() {
         commands.put(CommandType.SIGN_OUT, new SignOutCommand());
         commands.put(CommandType.MOVE_TO_CART_PAGE, new MoveToCartPageCommand());
+        commands.put(CommandType.MOVE_TO_ACCOUNT_PAGE, new MoveToAccountPageCommand());
         commands.put(CommandType.ADD_DISH_TO_CART, new AddDishToCartCommand());
+        commands.put(CommandType.CART_REDIRECT_PAGE, new CartRedirectPageCommand());
         commands.put(CommandType.COMPLETE_CART, new CompleteCartCommand());
     }
 }

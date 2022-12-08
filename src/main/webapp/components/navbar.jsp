@@ -36,7 +36,7 @@
                     <input type="hidden" name="userid" value="${user.getUserId()}">
                     <input type="hidden" name="command" value="move_to_cart_page">
                     <button class="btn btn-light btn-sm" aria-current="page" type="submit">
-                        <h5><fmt:message key="navbar.common.cart"/></h5>
+                        <h5>🛒<fmt:message key="navbar.common.cart"/></h5>
                     </button>
                 </form>
             </c:if>
@@ -44,7 +44,7 @@
                 <form class="d-flex" action="${pageContext.request.contextPath}/controller">
                     <input type="hidden" name="command" value="move_to_orders_page">
                     <button class="btn btn-light btn-sm" aria-current="page" type="submit">
-                        <h5><fmt:message key="navbar.common.orders"/></h5>
+                        <h5>🧾<fmt:message key="navbar.common.orders"/></h5>
                     </button>
                 </form>
             </c:if>
@@ -68,6 +68,12 @@
             </c:if>
             <c:if test="${role == 'ADMIN' || role == 'USER'}">
                 <div class="col d-flex justify-content-end align-items-end">
+                    <form class="d-flex" action="${pageContext.request.contextPath}/controller" method="get">
+                        <input type="hidden" name="command" value="move_to_account_page">
+                        <button class="btn btn-primary d-flex" type="submit">
+                            <fmt:message key="navbar.common.profile"/>
+                        </button>
+                    </form>
                     <form class="d-flex" action="${pageContext.request.contextPath}/controller" method="get">
                         <input type="hidden" name="command" value="sign_out">
                         <button class="btn btn-primary d-flex" type="submit">

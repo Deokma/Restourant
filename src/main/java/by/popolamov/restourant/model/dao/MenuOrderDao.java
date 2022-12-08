@@ -3,6 +3,7 @@ package by.popolamov.restourant.model.dao;
 import by.popolamov.restourant.exception.DaoException;
 import by.popolamov.restourant.model.entity.Menu;
 import by.popolamov.restourant.model.entity.MenuOrder;
+import by.popolamov.restourant.model.entity.MenuOrderQuantity;
 
 import java.util.List;
 import java.util.Optional;
@@ -44,4 +45,6 @@ public interface MenuOrderDao {
     Optional<MenuOrder> findMenuOrderByUserId(int userid) throws DaoException;
 
     List<MenuOrder> findOrderByOrder(MenuOrder order) throws DaoException;
+
+    List<MenuOrder> findCartByQuentity(MenuOrderQuantity menuOrderQuantity) throws DaoException;
 }

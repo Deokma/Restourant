@@ -6,7 +6,7 @@
 <fmt:setBundle basename="prop.pagecontent"/>
 <html>
 <head>
-    <title>Orders</title>
+    <title>🧾Orders</title>
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
@@ -28,7 +28,7 @@
                     <input type="hidden" name="orderid" value="${order.getOrderid()}">
                     <div class="col border border-dark"> ${order.getOrderid()}</div>
                     <div class="col border border-dark">${order.getTotalsum()} б. р.</div>
-                    <div class="col border border-dark">${order.getStatusString()}</div>
+                    <div class="col border border-dark text-danger">${order.getStatusString()}</div>
                     <div class="col border border-light"><input type="hidden" name="command" value="complete_order">
                         <button class="btn btn-sm btn-success" type="submit">
                             Complete
@@ -56,7 +56,7 @@
                     <input type="hidden" name="orderid" value="${order.getOrderid()}">
                     <div class="border border-dark">${order.getOrderid()}</div>
                     <div class="border border-dark">${order.getTotalsum()} б. р.</div>
-                    <div class="border border-dark">${order.getStatusString()}</div>
+                    <div class="border border-dark text-success">${order.getStatusString()}</div>
                     <div class="col border border-light"><input type="hidden" name="command" value="delete_order">
                         <button class="btn btn-sm btn-danger" type="submit">
                             Delete

@@ -23,7 +23,7 @@
         <c:forEach items="${menu_list}" var="menu" varStatus="status">
             <div class="col">
                 <div class="card h-100">
-                    <img src="${menu.getImage()}" width="350" height="220" class="card-img-top" alt="...">
+                    <img src="${menu.getImage()}" width="500" height="200" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h6 class="card-title">
                             <form action="${pageContext.request.contextPath}/controller" method="get">

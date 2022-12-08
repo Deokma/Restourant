@@ -1,10 +1,11 @@
-package by.popolamov.restourant.controller.command.impl.moveto.user;
+package by.popolamov.restourant.controller.command.impl.moveto.admin;
 
 import by.popolamov.restourant.controller.command.Command;
 import by.popolamov.restourant.controller.command.PagePath;
 import by.popolamov.restourant.controller.command.Router;
 import by.popolamov.restourant.controller.command.*;
 import by.popolamov.restourant.controller.command.RequestUtil;
+import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToCartPageCommand;
 import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.model.entity.*;
@@ -27,7 +28,7 @@ public class OrderRedirectPageCommand implements Command {
     public Router execute(HttpServletRequest request) {
         Router router;
         RequestUtil requestUtil = RequestUtil.getInstance();
-        router = new Router(PagePath.CART_PAGE.getAddress(), Router.RouterType.REDIRECT);
+        router = new Router(PagePath.ORDERS_PAGE.getAddress(), Router.RouterType.REDIRECT);
         return router;
     }
 }

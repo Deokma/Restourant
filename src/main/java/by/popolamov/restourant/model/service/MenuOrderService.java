@@ -2,6 +2,7 @@ package by.popolamov.restourant.model.service;
 
 import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.model.entity.MenuOrder;
+import by.popolamov.restourant.model.entity.MenuOrderQuantity;
 
 import java.util.List;
 
@@ -46,8 +47,8 @@ public interface MenuOrderService {
      * @throws ServiceException if movie id is null or if reading from data source throws the exception
      */
     MenuOrder findOrderByUserId(int dishid) throws ServiceException;
-    //int findOrderByUserid(int dishid) throws ServiceException;
     List<MenuOrder> findOrderByOrder(MenuOrder order) throws ServiceException;
 
-    //MenuOrder findOrderByAll() throws ServiceException;
+    List<MenuOrder> findCartByQuentity(MenuOrderQuantity menuOrderQuantity) throws ServiceException;
+
 }

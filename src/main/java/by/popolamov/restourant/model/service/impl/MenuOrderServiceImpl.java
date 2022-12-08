@@ -5,6 +5,9 @@ import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.model.dao.MenuOrderDao;
 import by.popolamov.restourant.model.dao.impl.MenuOrderDaoImpl;
 import by.popolamov.restourant.model.entity.MenuOrder;
+import by.popolamov.restourant.model.entity.MenuOrderQuantity;
+import by.popolamov.restourant.model.entity.Order;
+import by.popolamov.restourant.model.entity.OrderStatus;
 import by.popolamov.restourant.model.service.MenuOrderService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -110,6 +113,22 @@ public class MenuOrderServiceImpl implements MenuOrderService {
         List<MenuOrder> orders;
         try {
             orders = menuOrderDao.findOrderByOrder(menuOrder);
+        } catch (DaoException e) {
+            logger.error("Can't handle findOrderByOrderStatus request at MenuService", e);
+            throw new ServiceException("Can't handle findOrderByOrderStatus request at MenuService", e);
+        }
+        return orders;
+    }
+    @Override
+    public List<MenuOrder> findCartByQuentity(MenuOrderQuantity menuOrderQuantity) throws ServiceException {
+        if (menuOrderQuantity == null) {
+            logger.error("orderStatus doesn't present");
+            throw new ServiceException("orderStatus doesn't present");
+        }
+
+        List<MenuOrder> orders;
+        try {
+            orders = menuOrderDao.findCartByQuentity(menuOrderQuantity);
         } catch (DaoException e) {
             logger.error("Can't handle findOrderByOrderStatus request at MenuService", e);
             throw new ServiceException("Can't handle findOrderByOrderStatus request at MenuService", e);

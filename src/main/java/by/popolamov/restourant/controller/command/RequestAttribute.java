@@ -16,7 +16,7 @@ public final class RequestAttribute {
     public static final String MENU_COVERS_LIST = "menu_covers_list";
     public static final String MENU_PRICE_LIST = "menu_price_list";
     public static final String MENU_DISH_LIST = "menu_dish_list";
-    public static final String MENU_ORDER_LIST = "menu_order_list";
+    public static final String MENU_ORDER = "menuorder";
 
     private RequestAttribute() {
 

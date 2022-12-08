@@ -30,18 +30,15 @@ public class MoveToCartPageCommand implements Command {
         Router router;
         RequestUtil requestUtil = RequestUtil.getInstance();
         try {
-            int userId = Integer.parseInt(request.getParameter("userid"));
-            MenuOrder menuOrder = menuOrderService.findOrderByUserId(userId);
-            request.setAttribute("menuorder", menuOrder);
             List<MenuOrder> menuOrderList = new ArrayList<>();
-            menuOrderList.addAll(menuOrderService.findOrderByOrder(menuOrder));
-            router = new Router(PagePath.CART_PAGE.getAddress(), Router.RouterType.REDIRECT);
+            menuOrderList.addAll(menuOrderService.findCartByQuentity(MenuOrderQuantity.ONE));
+            request.setAttribute(RequestAttribute.MENU_ORDER, menuOrderList);
+            router = new Router(PagePath.CART_PAGE.getAddress(), Router.RouterType.FORWARD);
         } catch (ServiceException e) {
             logger.error("Error at MoveToCartPageCommand", e);
             String pageTo = getPageFrom(request);
             router = new Router(pageTo, Router.RouterType.REDIRECT);
         }
         return router;
-        //return new Router(PagePath.CART_PAGE.getAddress(), Router.RouterType.FORWARD);
     }
 }

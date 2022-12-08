@@ -51,7 +51,7 @@ public interface OrderService {
     /**
      * Find movie by movie id. Throws ServiceException if movie id is null or if reading from data source throws the exception.
      *
-     * @param order the movie id
+     * @param orderStatus the movie id
      * @return the movie
      * @throws ServiceException if movie id is null or if reading from data source throws the exception
      */

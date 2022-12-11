@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
-<jsp:include page="pages/components/navbar.jsp"/>
+<jsp:include page="components/navbar.jsp"/>
 <div class="container text-center">
     <h2 class="d-flex">🛒Cart</h2>
 </div>

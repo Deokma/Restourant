@@ -3,8 +3,6 @@ package by.popolamov.restourant.model.dao.impl;
 import by.popolamov.restourant.exception.ConnectionPoolException;
 import by.popolamov.restourant.exception.DaoException;
 import by.popolamov.restourant.model.dao.OrderDao;
-import by.popolamov.restourant.model.entity.Menu;
-import by.popolamov.restourant.model.entity.MenuCategory;
 import by.popolamov.restourant.model.entity.Order;
 import by.popolamov.restourant.model.entity.OrderStatus;
 import by.popolamov.restourant.model.pool.CustomConnectionPool;
@@ -22,7 +20,6 @@ import java.util.Optional;
 
 public class OrderDaoImpl implements OrderDao {
     private static final Logger logger = LogManager.getLogger(MenuDaoImpl.class);
-    private static final ImageInputStreamUtil inputStreamUtil = ImageInputStreamUtil.getInstance();
     private final CustomConnectionPool pool = CustomConnectionPool.getInstance();
     private static final String SQL_UPDATE_ORDER =
             "UPDATE \"order\" SET status=1 " +
@@ -58,8 +55,8 @@ public class OrderDaoImpl implements OrderDao {
             statement.setLong(1, order.getOrderid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while updating a movie", e);
-            throw new DaoException("Error while updating a movie", e);
+            logger.error("Error while delete a order", e);
+            throw new DaoException("Error while updating a order", e);
         }
     }
     @Override
@@ -76,27 +73,8 @@ public class OrderDaoImpl implements OrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
-        }
-        return Optional.empty();
-    }
-    @Override
-    public Optional<Order> findOrderByIdOrderClass(int orderid) throws DaoException {
-        try (
-                Connection connection = pool.getConnection();
-                PreparedStatement statement = connection.prepareStatement(SQL_SELECT_BY_ORDER_ID)
-        ) {
-            statement.setInt(1, orderid);
-            try(ResultSet resultSet = statement.executeQuery()) {
-                if (resultSet.next()) {
-                    Order order = createOrder(resultSet);
-                    return Optional.of(order);
-                }
-            }
-        } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a order by orderid", e);
+            throw new DaoException("Error while selecting a order by orderid", e);
         }
         return Optional.empty();
     }
@@ -114,8 +92,8 @@ public class OrderDaoImpl implements OrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a order by order", e);
+            throw new DaoException("Error while selecting a order by order", e);
         }
         return null;
     }
@@ -136,15 +114,15 @@ public class OrderDaoImpl implements OrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a menu", e);
-            throw new DaoException("Error while selecting a menu", e);
+            logger.error("Error while selecting a order by order status", e);
+            throw new DaoException("Error while selecting a order by order status", e);
         }
         return orders;
     }
     /**
      * Gets instance.
      *
-     * @return the instance of movie dao
+     * @return the instance of order dao
      */
     public static OrderDao getInstance() {
         return OrderDaoImpl.MySqlOrderDaoInstanceHolder.INSTANCE;

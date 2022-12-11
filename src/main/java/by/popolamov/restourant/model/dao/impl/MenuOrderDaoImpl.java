@@ -2,7 +2,6 @@ package by.popolamov.restourant.model.dao.impl;
 
 import by.popolamov.restourant.exception.ConnectionPoolException;
 import by.popolamov.restourant.exception.DaoException;
-import by.popolamov.restourant.model.dao.MenuDao;
 import by.popolamov.restourant.model.dao.MenuOrderDao;
 import by.popolamov.restourant.model.entity.*;
 import by.popolamov.restourant.model.pool.CustomConnectionPool;
@@ -17,9 +16,7 @@ import java.util.Optional;
 
 public class MenuOrderDaoImpl implements MenuOrderDao {
     private static final Logger logger = LogManager.getLogger(MenuDaoImpl.class);
-    private static final ImageInputStreamUtil inputStreamUtil = ImageInputStreamUtil.getInstance();
     private final CustomConnectionPool pool = CustomConnectionPool.getInstance();
-
 
     private static final String SQL_INSERT_MENU_ORDER =
             "INSERT INTO menuorder (dishid, userid, quentity, price,dishname) " +
@@ -31,16 +28,11 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                     "menu.dishname AS dishname " +
                     "FROM users, menu " +
                     "WHERE userid=? AND dishid=? ";
-    private static final String SQL_UPDATE_MENU_ORDER =
-            "UPDATE menuorder SET quantity=?, dishname=? " +
-                    "WHERE dishid=?";
     private static final String SQL_DELETE_MENU_ORDER =
             "DELETE FROM menuorder " +
                     "WHERE userid=?";
     private static final String SQL_SELECT_BY_DISH_ID =
             "SELECT dishid, dishname FROM menu WHERE dishid=?";
-    private static final String SQL_SELECT_BY_ORDER_ID =
-            "SELECT dishid, dishname FROM menu WHERE userid=?";
     private static final String SQL_SELECT_BY_USER_ID =
             "SELECT dishname, price FROM menuorder WHERE userid=?";
     private static final String SQL_SELECT_ALL =
@@ -53,18 +45,6 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                     "GROUP BY orderid ";
     private static final String SQL_SELECT_BY_QUENTITY =
             "SELECT orderid,dishid, userid, dishname, price FROM menuorder WHERE quentity=?";
-//    private static final String SQL_CALCULATE_ORDER_2 =
-//            "SELECT SUM(price) AS totalsum " +
-//                    "FROM order " +
-//                    "WHERE userid=?";
-//    private static final String SQL_CALCULATE_ORDER_3 =
-//            "SELECT SUM(price) AS totalsum " +
-//                    "FROM order " +
-//                    "WHERE userid=?";
-//    private static final String SQL_CALCULATE_ORDER_4 =
-//            "SELECT SUM(price) AS totalsum " +
-//                    "FROM order " +
-//                    "WHERE userid=?";
 
     private MenuOrderDaoImpl() {
     }
@@ -99,8 +79,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
             }
             return rowsUpdate;
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while adding a movie", e);
-            throw new DaoException("Error while adding a movie", e);
+            logger.error("Error while adding a Menu Order", e);
+            throw new DaoException("Error while adding a Menu Order", e);
         }
     }
 
@@ -113,8 +93,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
             statement.setInt(1, menuOrder.getUserid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while updating a movie", e);
-            throw new DaoException("Error while updating a movie", e);
+            logger.error("Error while updating a Menu Order", e);
+            throw new DaoException("Error while updating a Menu Order", e);
         }
     }
 
@@ -127,8 +107,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
             statement.setInt(1, menuOrder.getUserid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while updating a movie", e);
-            throw new DaoException("Error while updating a movie", e);
+            logger.error("Error while delete a Menu Order", e);
+            throw new DaoException("Error while delete a Menu Order", e);
         }
     }
 
@@ -146,8 +126,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a Menu Order DishId", e);
+            throw new DaoException("Error while selecting a Menu Order Dishid", e);
         }
         return Optional.empty();
     }
@@ -166,8 +146,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a Menu Order order", e);
+            throw new DaoException("Error while selecting a Menu Order order", e);
         }
         return null;
     }
@@ -185,8 +165,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a menu", e);
-            throw new DaoException("Error while selecting a menu", e);
+            logger.error("Error while selecting a Menu Order Quantity", e);
+            throw new DaoException("Error while selecting a Menu Order Quantity", e);
         }
         return menuOrders;
     }
@@ -205,8 +185,8 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a Menu Order userid", e);
+            throw new DaoException("Error while selecting a Menu Order userid", e);
         }
         return Optional.empty();
     }
@@ -227,7 +207,6 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
     }
     private MenuOrder createCartMenu(ResultSet resultSet) throws SQLException {
         return MenuOrder.builder()
-                //.setUserid(resultSet.getInt(1))
                 .setDishName(resultSet.getString(1))
                 .setPrice(resultSet.getInt(2))
                 .build();

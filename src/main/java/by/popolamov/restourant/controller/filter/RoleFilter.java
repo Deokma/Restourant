@@ -6,6 +6,7 @@ import by.popolamov.restourant.controller.command.SessionAttribute;
 import by.popolamov.restourant.model.entity.UserRole;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.annotation.WebInitParam;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -15,15 +16,21 @@ import java.util.EnumSet;
 /**
  * The Role filter. It prevents access to commands of other roles.
  */
-@WebFilter(urlPatterns = { "/*" })
+@WebFilter(urlPatterns = { "/*" },
+        initParams = { @WebInitParam(name = "INDEX_PATH", value = "/index.jsp"),
+                @WebInitParam(name = "ERROR_404_PAGE", value = "/pages/error/error404.jsp")})
 public class RoleFilter implements Filter {
     private EnumSet<CommandType> generalCommands;
     private EnumSet<CommandType> adminCommands;
-
+    private String indexPath;
+    private String error404Page;
     @Override
     public void init(FilterConfig config) {
         generalCommands = EnumSet.range(CommandType.SIGN_IN, CommandType.CHANGE_LOCALE);
         adminCommands = EnumSet.range(CommandType.GET_USERS, CommandType.ADD_MENU);
+        indexPath = config.getInitParameter("INDEX_PATH");
+        error404Page = config.getInitParameter("ERROR_404_PAGE");
+
     }
 
     @Override
@@ -39,7 +46,7 @@ public class RoleFilter implements Filter {
             if (generalCommands.stream().anyMatch(commandType -> commandType.toString().toLowerCase().equals(commandName))) {
                 chain.doFilter(request, response);
             } else {
-                ((HttpServletResponse) response).sendError(404);
+                ((HttpServletResponse) response).sendRedirect(httpRequest.getContextPath() + error404Page);
             }
             return;
         }
@@ -48,7 +55,7 @@ public class RoleFilter implements Filter {
             return;
         }
         if (adminCommands.stream().anyMatch(commandType -> commandType.toString().toLowerCase().equals(commandName))) {
-            ((HttpServletResponse) response).sendError(404);
+            ((HttpServletResponse) response).sendRedirect(httpRequest.getContextPath() + error404Page);
             return;
         }
         chain.doFilter(request, response);

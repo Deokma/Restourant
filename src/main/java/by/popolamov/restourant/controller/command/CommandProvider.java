@@ -2,10 +2,6 @@ package by.popolamov.restourant.controller.command;
 
 import by.popolamov.restourant.controller.command.impl.admin.*;
 import by.popolamov.restourant.controller.command.impl.general.*;
-//import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToAddGenrePageCommand;
-//import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToAddMovieCoverPageCommand;
-//import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToAddMoviePageCommand;
-//import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToEditMoviePageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.admin.MoveToOrdersPageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.general.MoveToLoginPageCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.general.MoveToMainPageCommand;
@@ -16,8 +12,6 @@ import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToCartPag
 import by.popolamov.restourant.controller.command.impl.user.AddDishToCartCommand;
 import by.popolamov.restourant.controller.command.impl.user.CompleteCartCommand;
 import by.popolamov.restourant.controller.command.impl.moveto.admin.OrderRedirectPageCommand;
-//import by.popolamov.restourant.controller.command.impl.moveto.user.MoveToAddFeedbackPageCommand;
-//import by.popolamov.restourant.controller.command.impl.user.AddFeedbackCommand;
 
 import java.util.EnumMap;
 
@@ -75,7 +69,6 @@ public class CommandProvider {
     }
 
     private void addAdminCommands() {
-        //commands.put(CommandType.GET_USERS, new GetUsersCommand());
         commands.put(CommandType.CHANGE_USER_ROLE, new ChangeUserRoleCommand());
         commands.put(CommandType.MOVE_TO_ORDERS_PAGE, new MoveToOrdersPageCommand());
         commands.put(CommandType.MOVE_TO_ACCOUNT_PAGE, new MoveToAccountPageCommand());

@@ -15,8 +15,8 @@
     <title>KFC</title>
 </head>
 <body>
-<jsp:include page="pages/components/navbar.jsp"/>
-<jsp:include page="pages/components/carousel.jsp"/>
+<jsp:include page="components/navbar.jsp"/>
+<jsp:include page="components/carousel.jsp"/>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-5 g-4">
         <c:forEach items="${menu_list}" var="menu" varStatus="status">

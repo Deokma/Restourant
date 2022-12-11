@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
 </head>
 <body>
-<jsp:include page="pages/components/navbar.jsp"/>
+<jsp:include page="components/navbar.jsp"/>
 <h3 class="d-flex text-danger container">In Progress:</h3>
 <table class="table container bg-light">
     <thead>

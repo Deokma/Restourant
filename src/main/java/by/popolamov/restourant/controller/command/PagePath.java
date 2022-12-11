@@ -5,12 +5,12 @@ package by.popolamov.restourant.controller.command;
  */
 public enum PagePath {
     INDEX_PAGE("index.jsp"),
-    MAIN_PAGE("main.jsp"),
-    LOGIN_PAGE("login.jsp"),
-    SIGNUP_PAGE("signup.jsp"),
-    ACCOUNT_PAGE("account.jsp"),
-    CART_PAGE("cart.jsp"),
-    ORDERS_PAGE("orders.jsp"),
+    MAIN_PAGE("pages/main.jsp"),
+    LOGIN_PAGE("pages/login.jsp"),
+    SIGNUP_PAGE("pages/signup.jsp"),
+    ACCOUNT_PAGE("pages/account.jsp"),
+    CART_PAGE("pages/cart.jsp"),
+    ORDERS_PAGE("pages/orders.jsp"),
     ORDER_REDIRECT_PAGE("pages/redirect/order_redirect.jsp"),
     CART_REDIRECT_PAGE("pages/redirect/cart_redirect.jsp"),
 

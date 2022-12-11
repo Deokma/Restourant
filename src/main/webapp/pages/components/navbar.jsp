@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: DeNiSOn4Ik
-  Date: 08.10.2022
-  Time: 17:15
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
@@ -52,7 +45,7 @@
                 <div>
                     <form class="d-flex" action="${pageContext.request.contextPath}/controller" method="get">
                         <input type="hidden" name="command" value="move_to_login_page">
-                        <button class="btn btn-primary ms-1" type="submit">
+                        <button class="btn btn-primary ms-1 btn-light" type="submit">
                             <fmt:message key="navbar.common.sign.in"/>
                         </button>
                     </form>
@@ -60,7 +53,7 @@
                 <div>
                     <form class="d-flex" action="${pageContext.request.contextPath}/controller">
                         <input type="hidden" name="command" value="move_to_signup_page">
-                        <button class="btn btn-primary ms-1" type="submit">
+                        <button class="btn btn-primary ms-1 btn-light" type="submit">
                             <fmt:message key="login.button.sign.up"/>
                         </button>
                     </form>
@@ -70,14 +63,14 @@
                 <div class="col d-flex justify-content-end align-items-end">
                     <form class="d-flex" action="${pageContext.request.contextPath}/controller" method="get">
                         <input type="hidden" name="command" value="move_to_account_page">
-                        <button class="btn btn-primary d-flex" type="submit">
-                            <fmt:message key="navbar.common.profile"/>
+                        <button class="btn btn-primary d-flex btn-light" type="submit">
+                            👤<fmt:message key="navbar.common.profile"/>
                         </button>
                     </form>
                     <form class="d-flex" action="${pageContext.request.contextPath}/controller" method="get">
                         <input type="hidden" name="command" value="sign_out">
-                        <button class="btn btn-primary d-flex" type="submit">
-                            <fmt:message key="navbar.common.logout"/>
+                        <button class="btn btn-primary d-flex btn-light" type="submit">
+                            🚪<fmt:message key="navbar.common.logout"/>
                         </button>
                     </form>
                 </div>

@@ -1,9 +1,11 @@
 package by.popolamov.restourant.controller.filter;
 
+import by.popolamov.restourant.controller.command.PagePath;
 import by.popolamov.restourant.controller.command.RequestAttribute;
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
@@ -17,6 +19,7 @@ public class LastPageFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         String pageFrom = httpServletRequest.getHeader("referer");
         request.setAttribute(RequestAttribute.PAGE_FROM, pageFrom);
+
         chain.doFilter(request, response);
     }
 }

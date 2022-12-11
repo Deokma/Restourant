@@ -11,21 +11,24 @@ import java.io.IOException;
 /**
  * The Page redirect security filter. It prevents access to pages.
  */
-@WebFilter(urlPatterns = { "/pages/*" },
-        initParams = { @WebInitParam(name = "INDEX_PATH", value = "/index.jsp") })
+@WebFilter(urlPatterns = {"/pages/*"},
+        initParams = {@WebInitParam(name = "ERROR_404_PAGE", value = "/pages/error/error404.jsp")})
 public class PageRedirectSecurityFilter implements Filter {
-    private String indexPath;
+    private String error404Page;
 
     @Override
     public void init(FilterConfig config) {
-        indexPath = config.getInitParameter("INDEX_PATH");
+        error404Page = config.getInitParameter("ERROR_404_PAGE");
     }
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws ServletException, IOException {
         HttpServletRequest httpRequest = (HttpServletRequest) request;
         HttpServletResponse httpResponse = (HttpServletResponse) response;
-        httpResponse.sendRedirect(httpRequest.getContextPath() + indexPath);
+
+        if (((HttpServletRequest) request).getSession(false) == null) {
+            httpResponse.sendRedirect(httpRequest.getContextPath() + error404Page);
+        }
         chain.doFilter(request, response);
     }
 }

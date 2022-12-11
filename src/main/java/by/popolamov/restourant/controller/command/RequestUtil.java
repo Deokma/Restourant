@@ -1,7 +1,6 @@
 package by.popolamov.restourant.controller.command;
 
 import by.popolamov.restourant.exception.ServiceException;
-import by.popolamov.restourant.model.entity.OrderStatus;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -25,31 +24,6 @@ public final class RequestUtil {
      */
     public static RequestUtil getInstance() {
         return INSTANCE;
-    }
-
-    /**
-     * Gets parameter as long. Throws ServiceException if parameter is invalid.
-     *
-     * @param request       the request
-     * @param parameterName the parameter name
-     * @return the parameter as long
-     * @throws ServiceException if parameter is invalid
-     */
-    public Long getParameterAsLong(HttpServletRequest request, String parameterName) throws ServiceException {
-        Optional<String> parameter = getParameter(request, parameterName);
-        if (parameter.isPresent()) {
-            try (Scanner scanner = new Scanner(parameter.get())) {
-                if (scanner.hasNextLong()) {
-                    return Long.valueOf(parameter.get());
-                } else {
-                    logger.error("Invalid parameter");
-                    throw new ServiceException("Invalid parameter");
-                }
-            }
-        } else {
-            logger.error("Invalid parameter");
-            throw new ServiceException("Invalid parameter");
-        }
     }
 
     /**

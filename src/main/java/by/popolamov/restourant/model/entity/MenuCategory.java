@@ -21,6 +21,7 @@ public enum MenuCategory {
         }
         return menuCategory;
     }
+
     public int toInt() {
         int menuCategory = 1;
         switch (this) {
@@ -36,9 +37,5 @@ public enum MenuCategory {
 
     MenuCategory(int category) {
         this.category = category;
-    }
-
-    public int getCategory() {
-        return category;
     }
 }

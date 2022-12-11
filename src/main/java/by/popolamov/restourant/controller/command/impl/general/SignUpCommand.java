@@ -4,17 +4,11 @@ import by.popolamov.restourant.controller.command.*;
 import by.popolamov.restourant.exception.ServiceException;
 import by.popolamov.restourant.model.entity.User;
 import by.popolamov.restourant.model.service.UserService;
-import by.popolamov.restourant.controller.command.*;
-import by.popolamov.restourant.exception.ServiceException;
-import by.popolamov.restourant.model.entity.User;
-import by.popolamov.restourant.model.service.UserService;
 import by.popolamov.restourant.model.service.impl.UserServiceImpl;
 import jakarta.servlet.http.HttpServletRequest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import javax.mail.MessagingException;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 

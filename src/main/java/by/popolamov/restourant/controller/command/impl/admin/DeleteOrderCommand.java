@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The class CompleteOrderCommand.
+ * The class DeleteOrderCommand.
  */
 public class DeleteOrderCommand implements Command {
     private static final Logger logger = LogManager.getLogger(DeleteOrderCommand.class);
@@ -34,7 +34,7 @@ public class DeleteOrderCommand implements Command {
             request.setAttribute(RequestAttribute.ORDER_LIST, ordersList);
             router = new Router(PagePath.ORDERS_PAGE.getAddress(), Router.RouterType.FORWARD);
         } catch (ServiceException e) {
-            logger.error("Error at CompleteOrderCommand", e);
+            logger.error("Error at DeleteOrderCommand", e);
             String pageTo = getPageFrom(request);
             router = new Router(PagePath.INDEX_PAGE.getAddress(),Router.RouterType.REDIRECT);
         }

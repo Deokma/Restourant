@@ -33,14 +33,14 @@ public class UserDaoImpl implements UserDao {
                     "JOIN roles ON roles.roleid=user.roleid " +
                     "WHERE userid=?";
     private static final String SQL_SELECT_USER_BY_LOGIN =
-            "SELECT userid, login, firstName, lastName, roleid FROM users" +
+            "SELECT userid, login, firstname, lastname, roleid FROM users" +
             " WHERE login=?";
     private static final String SQL_SELECT_USER_PASSWORD_BY_LOGIN =
             "SELECT password " +
                     "FROM users " +
                     "WHERE login=?";
     private static final String SQL_SELECT_USERS_BY_ROLE =
-            "SELECT userid, login, firstName, lastName, roles.name AS role_name " +
+            "SELECT userid, login, firstname, lastname, roles.name AS role_name " +
                     "FROM users " +
                     "JOIN roles ON roles.roleid=users.roleid " +
                     "WHERE users.roleid=?";
@@ -169,7 +169,6 @@ public class UserDaoImpl implements UserDao {
                 .setFirstName(resultSet.getString(3))
                 .setLastName(resultSet.getString(4))
                 .setRole(UserRole.getById(resultSet.getInt(5)))
-                //.setRole(UserRole.valueOf(resultSet.getString(5).toUpperCase()))
                 .build();
     }
 }

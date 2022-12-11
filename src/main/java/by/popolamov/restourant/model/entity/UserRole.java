@@ -1,6 +1,5 @@
 package by.popolamov.restourant.model.entity;
 
-import org.apache.logging.log4j.core.jackson.ListOfMapEntrySerializer;
 
 /**
  * The enum User role entity.

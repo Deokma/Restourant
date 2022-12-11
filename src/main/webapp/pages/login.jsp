@@ -15,7 +15,7 @@
     <title>Login</title>
 </head>
 <body onload="changeHashOnLoad();">
-<jsp:include page="pages/components/navbar.jsp"/>
+<jsp:include page="components/navbar.jsp"/>
 <div class="container-fluid d-flex h-100 justify-content-center align-items-center p-0">
 
     <div class="row bg-white shadow-sm">

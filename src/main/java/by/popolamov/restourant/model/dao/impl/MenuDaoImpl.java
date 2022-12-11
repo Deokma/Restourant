@@ -5,7 +5,6 @@ import by.popolamov.restourant.exception.DaoException;
 import by.popolamov.restourant.model.dao.MenuDao;
 import by.popolamov.restourant.model.entity.Menu;
 import by.popolamov.restourant.model.entity.MenuCategory;
-import by.popolamov.restourant.model.entity.Order;
 import by.popolamov.restourant.model.pool.CustomConnectionPool;
 import by.popolamov.restourant.util.ImageInputStreamUtil;
 import org.apache.logging.log4j.LogManager;
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The implementation of MovieDao interface.
+ * The implementation of MenuDao interface.
  */
 public class MenuDaoImpl implements MenuDao {
     private static final Logger logger = LogManager.getLogger(MenuDaoImpl.class);
@@ -39,20 +38,10 @@ public class MenuDaoImpl implements MenuDao {
             "SELECT dishname, price, categoryid, dishid,image FROM menu WHERE dishid=?";
     private static final String SQL_SELECT_BY_DISH_NAME =
             "SELECT dishname, price, categoryid, dishid,image FROM menu WHERE dishname=?";
-    private static final String SQL_SELECT_MOVIES_BY_MOVIE_TYPE =
-            "SELECT movie_id, title, logline, release_year, cover, movie_type.name AS movie_type " +
-                    "FROM movie " +
-                    "JOIN movie_type ON movie.movie_type_id=movie_type.movie_type_id " +
-                    "WHERE movie.movie_type_id=?";
-    private static final String SQL_CALCULATE_MENU_PRICE_BY_DISH_ID =
-            "SELECT SUM(price) AS totalsum " +
-                    "FROM order " +
-                    "WHERE dishid=?";
 
     private MenuDaoImpl() {
 
     }
-
     private static final class MySqlMenuDaoInstanceHolder {
         private static final MenuDao INSTANCE = new MenuDaoImpl();
     }
@@ -60,7 +49,7 @@ public class MenuDaoImpl implements MenuDao {
     /**
      * Gets instance.
      *
-     * @return the instance of movie dao
+     * @return the instance of menu dao
      */
     public static MenuDao getInstance() {
         return MenuDaoImpl.MySqlMenuDaoInstanceHolder.INSTANCE;
@@ -85,8 +74,8 @@ public class MenuDaoImpl implements MenuDao {
             }
             return rowsUpdate;
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while adding a movie", e);
-            throw new DaoException("Error while adding a movie", e);
+            logger.error("Error while adding a menu", e);
+            throw new DaoException("Error while adding a menu", e);
         }
     }
 
@@ -103,8 +92,8 @@ public class MenuDaoImpl implements MenuDao {
             statement.setLong(5, menu.getDishid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while updating a movie", e);
-            throw new DaoException("Error while updating a movie", e);
+            logger.error("Error while updating a menu", e);
+            throw new DaoException("Error while updating a menu", e);
         }
     }
 
@@ -117,8 +106,8 @@ public class MenuDaoImpl implements MenuDao {
             statement.setLong(1, menu.getDishid());
             return statement.executeUpdate();
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while updating a movie", e);
-            throw new DaoException("Error while updating a movie", e);
+            logger.error("Error while delete a menu", e);
+            throw new DaoException("Error while delete a menu", e);
         }
     }
 
@@ -136,8 +125,8 @@ public class MenuDaoImpl implements MenuDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a menu", e);
-            throw new DaoException("Error while selecting a menu", e);
+            logger.error("Error while selecting a menu categiryid", e);
+            throw new DaoException("Error while selecting a menu categiryid", e);
         }
         return menus;
     }
@@ -156,8 +145,8 @@ public class MenuDaoImpl implements MenuDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a menu Dish Id", e);
+            throw new DaoException("Error while selecting a menu Dish Id", e);
         }
         return Optional.empty();
     }
@@ -177,8 +166,8 @@ public class MenuDaoImpl implements MenuDao {
                 }
             }
         } catch (SQLException | ConnectionPoolException e) {
-            logger.error("Error while selecting a movie", e);
-            throw new DaoException("Error while selecting a movie", e);
+            logger.error("Error while selecting a menu Dish Name", e);
+            throw new DaoException("Error while selecting a menu Dish Name", e);
         }
         return menu;
     }

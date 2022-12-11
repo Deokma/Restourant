@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The class MoveToCartPageCommand.
+ * The class MoveToAccountPageCommand.
  */
 public class MoveToAccountPageCommand implements Command {
     private static final Logger logger = LogManager.getLogger(MoveToAccountPageCommand.class);

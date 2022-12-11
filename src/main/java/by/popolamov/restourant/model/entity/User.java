@@ -99,31 +99,6 @@ public class User {
     public void setRole(UserRole role) {
         this.role = role;
     }
-
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o)
-//            return true;
-//        if (o == null || getClass() != o.getClass())
-//            return false;
-//        User user = (User) o;
-//        return userId.equals(user.userId)
-//                && login.equals(user.login)
-//                && firstName.equals(user.firstName)
-//                && lastName.equals(user.lastName)
-//                && role.equals(user.role);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        int result = userId.hashCode();
-//        result = result * 31 + login.hashCode();
-//        result = result * 31 + firstName.hashCode();
-//        result = result * 31 + lastName.hashCode();
-//        result = result * 31 + role.hashCode();
-//        return result;
-//    }
-
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

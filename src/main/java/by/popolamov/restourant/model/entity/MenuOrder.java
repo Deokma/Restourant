@@ -82,7 +82,7 @@ public class MenuOrder {
 
 
     /**
-     * The Builder for Movie.
+     * The Builder for MenuOrder.
      */
     public static class Builder {
         private final MenuOrder menuOrder;
@@ -97,8 +97,8 @@ public class MenuOrder {
         /**
          * Sets dish id.
          *
-         * @param dishId the movie id
-         * @return the movie id
+         * @param dishId the dish id
+         * @return the dish id
          */
         public MenuOrder.Builder setDishId(int dishId) {
             menuOrder.setDishid(dishId);
@@ -106,10 +106,10 @@ public class MenuOrder {
         }
 
         /**
-         * Sets dish id.
+         * Sets dishname.
          *
-         * @param dishName the movie id
-         * @return the movie id
+         * @param dishName the dishname
+         * @return the dishname
          */
         public MenuOrder.Builder setDishName(String dishName) {
             menuOrder.setDishname(dishName);
@@ -117,44 +117,53 @@ public class MenuOrder {
         }
 
         /**
-         * Sets dish id.
+         * Sets Quantity.
          *
-         * @param quantity the movie id
-         * @return the movie id
+         * @param quantity the quantity
+         * @return the quantity
          */
         public MenuOrder.Builder setQuantity(int quantity) {
             menuOrder.setQuantity(quantity);
             return this;
         }
 
+        /**
+         * Sets price.
+         *
+         * @param price the price
+         * @return the price
+         */
         public MenuOrder.Builder setPrice(int price) {
             menuOrder.setPrice(price);
             return this;
         }
+
+        /**
+         * Sets Userid.
+         *
+         * @param userid the Userid
+         * @return the Userid
+         */
         public MenuOrder.Builder setUserid(int userid) {
             menuOrder.setUserid(userid);
             return this;
         }
+
+        /**
+         * Sets orderid.
+         *
+         * @param orderId the orderid
+         * @return the orderid
+         */
         public MenuOrder.Builder setOrderId(int orderId) {
             menuOrder.setOrderid(orderId);
             return this;
         }
-//        /**
-//         * Sets title.
-//         *
-//         * @param price the title
-//         * @return the title
-//         */
-//        public MenuOrder.Builder setPrice(int price) {
-//            menu.setPrice(price);
-//            return this;
-//        }
-
 
         /**
-         * Build movie.
+         * Build MenuOrder.
          *
-         * @return the movie
+         * @return the menuorder
          */
         public MenuOrder build() {
             return menuOrder;

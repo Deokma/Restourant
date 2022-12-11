@@ -9,7 +9,7 @@ import java.util.Optional;
 /**
  * Interface describes the behavior of {@link User} entity
  *
- * @author Anton Radzionau
+ * @author Denis Popolamov
  */
 public interface UserDao {
     /**

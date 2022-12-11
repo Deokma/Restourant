@@ -9,6 +9,7 @@
         </title>
     </head>
     <body>
-        <fmt:message key="title.error.page.404"/>
+    <jsp:include page="../components/navbar.jsp"/>
+    <img class="position-absolute top-50 start-50 translate-middle" src="https://assets.atlanticbt.com/content/uploads/2016/02/404_atlanticbt_blog-1140x510.jpg">
     </body>
 </html>

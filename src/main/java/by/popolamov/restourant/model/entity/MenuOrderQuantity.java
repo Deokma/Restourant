@@ -16,6 +16,7 @@ public enum MenuOrderQuantity {
                 "quantity=" + quantity +
                 '}';
     }
+
     public int toInt() {
         int cartQuentity = 1;
         switch (this) {

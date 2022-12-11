@@ -12,19 +12,19 @@
     </div>
     <div class="carousel-inner ratio ratio-21x9">
         <div class="carousel-item active">
-            <img src="1.png"
+            <img src="https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/1.png"
                  class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://sun9-47.userapi.com/impg/4ABZ38JDnUAjs8EBg7rPm6jgxrKjVDVZbpX3hA/Y0khbkFy4_w.jpg?size=2560x1080&quality=96&sign=15309f2a34eea60617ee9844d0e923c6&type=album"
+            <img src="https://github.com/Deokma/Restourant/blob/master/src/main/webapp/pages/images/2.png?raw=true"
                  class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
         <div class="carousel-item">
-            <img src="https://sun9-21.userapi.com/impg/f_I7_GF1tu_NWD46JqW3A_rP4FiB9R3P-gv1qg/-3b1LALq-xA.jpg?size=2560x1080&quality=96&sign=f73dfa2023c7a05aadebef0f0c0d6aa4&type=album"
+            <img src="https://github.com/Deokma/Restourant/blob/master/src/main/webapp/pages/images/3.png?raw=true"
                  class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>

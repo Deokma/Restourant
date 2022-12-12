@@ -10,12 +10,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="https://www.kfc.by/assets/img/desktop/favicon_new.ico">
     <title>KFC</title>
 </head>
 <body>
 <jsp:include page="components/navbar.jsp"/>
+<div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/background.png');">
 <jsp:include page="components/carousel.jsp"/>
 <div class="container">
     <div class="row row-cols-1 row-cols-md-5 g-4">
@@ -58,5 +59,7 @@
         </c:forEach>
     </div>
 </div>
+</div>
+<jsp:include page="components/footer.jsp"/>
 </body>
 </html>

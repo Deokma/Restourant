@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="cursework@localhost">
-  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.40">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.45">
     <root id="1">
       <DateStyle>dmy</DateStyle>
       <IntrospectionStateNumber>1133</IntrospectionStateNumber>
@@ -802,11 +802,6 @@ false Zulu
 13388||10|U|G</Grants>
       <IntrospectionStateNumber>1133</IntrospectionStateNumber>
       <ObjectId>24576</ObjectId>
-      <Relations>sequence|table|32776|32777|1
-sequence|table|32783|32784|1
-sequence|table|32795|32796|1
-sequence|table|32802|32803|1
-</Relations>
       <OwnerName>postgres</OwnerName>
     </database>
     <database id="3" parent="1" name="postgres">
@@ -4245,25 +4240,25 @@ sequence|table|32802|32803|1
       <OwnerName>postgres</OwnerName>
     </schema>
     <sequence id="265" parent="264" name="menu_dishid_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>32776</ObjectId>
       <StateNumber>770</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="266" parent="264" name="menuorder_orderid_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>32783</ObjectId>
       <StateNumber>772</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="267" parent="264" name="order_orderid_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>32802</ObjectId>
       <StateNumber>776</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="268" parent="264" name="users_userid_seq">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <ObjectId>32795</ObjectId>
       <StateNumber>774</StateNumber>
       <OwnerName>postgres</OwnerName>
@@ -4299,33 +4294,34 @@ sequence|table|32802|32803|1
       <OwnerName>postgres</OwnerName>
     </table>
     <column id="274" parent="269" name="dishid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;menu_dishid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>770</StateNumber>
+      <SequenceId>32776</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="275" parent="269" name="dishname">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
       <StateNumber>770</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="276" parent="269" name="price">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>3</Position>
       <StateNumber>770</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="277" parent="269" name="image">
-      <DataType>varchar(450)|0s</DataType>
+      <DasType>varchar(450)|0s</DasType>
       <Position>4</Position>
       <StateNumber>838</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="278" parent="269" name="categoryid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>5</Position>
       <StateNumber>865</StateNumber>
       <TypeId>23</TypeId>
@@ -4347,39 +4343,40 @@ sequence|table|32802|32803|1
       <UnderlyingIndexId>32781</UnderlyingIndexId>
     </key>
     <column id="281" parent="270" name="orderid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;menuorder_orderid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>772</StateNumber>
+      <SequenceId>32783</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="282" parent="270" name="dishid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>2</Position>
       <StateNumber>772</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="283" parent="270" name="quentity">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>3</Position>
       <StateNumber>772</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="284" parent="270" name="userid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>4</Position>
       <StateNumber>923</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="285" parent="270" name="dishname">
-      <DataType>varchar(45)|0s</DataType>
+      <DasType>varchar(45)|0s</DasType>
       <Position>5</Position>
       <StateNumber>943</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="286" parent="270" name="price">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>6</Position>
       <StateNumber>967</StateNumber>
       <TypeId>23</TypeId>
@@ -4422,27 +4419,28 @@ sequence|table|32802|32803|1
       <UnderlyingIndexId>32788</UnderlyingIndexId>
     </key>
     <column id="291" parent="271" name="orderid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;order_orderid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>776</StateNumber>
+      <SequenceId>32802</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="292" parent="271" name="userid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>2</Position>
       <StateNumber>776</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="293" parent="271" name="totalsum">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>3</Position>
       <StateNumber>779</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="294" parent="271" name="status">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>4</Position>
       <StateNumber>947</StateNumber>
       <TypeId>23</TypeId>
@@ -4475,14 +4473,14 @@ sequence|table|32802|32803|1
       <UnderlyingIndexId>32807</UnderlyingIndexId>
     </key>
     <column id="298" parent="272" name="roleid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>863</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="299" parent="272" name="name">
-      <DataType>varchar(15)|0s</DataType>
+      <DasType>varchar(15)|0s</DasType>
       <Position>2</Position>
       <StateNumber>863</StateNumber>
       <TypeId>1043</TypeId>
@@ -4515,39 +4513,40 @@ sequence|table|32802|32803|1
       <UnderlyingIndexId>32866</UnderlyingIndexId>
     </key>
     <column id="303" parent="273" name="userid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <DefaultExpression>nextval(&apos;users_userid_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StateNumber>774</StateNumber>
+      <SequenceId>32795</SequenceId>
       <TypeId>23</TypeId>
     </column>
     <column id="304" parent="273" name="login">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>2</Position>
       <StateNumber>847</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="305" parent="273" name="roleid">
-      <DataType>integer|0s</DataType>
+      <DasType>integer|0s</DasType>
       <Position>3</Position>
       <StateNumber>774</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="306" parent="273" name="password">
-      <DataType>varchar(100)|0s</DataType>
+      <DasType>varchar(100)|0s</DasType>
       <Position>4</Position>
       <StateNumber>778</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="307" parent="273" name="firstname">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>5</Position>
       <StateNumber>784</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="308" parent="273" name="lastname">
-      <DataType>varchar(50)|0s</DataType>
+      <DasType>varchar(50)|0s</DasType>
       <Position>6</Position>
       <StateNumber>786</StateNumber>
       <TypeId>1043</TypeId>

@@ -20,7 +20,6 @@ import java.util.Optional;
 public class MenuServiceImpl implements MenuService {
     private static final Logger logger = LogManager.getLogger(MenuServiceImpl.class);
     private final MenuDao menuDao = MenuDaoImpl.getInstance();
-    //private final GenreDao genreDao = GenreDaoImpl.getInstance();
 
     private MenuServiceImpl() {
 
@@ -31,9 +30,9 @@ public class MenuServiceImpl implements MenuService {
     }
 
     /**
-     * Gets instance of movie service.
+     * Gets instance of menu service.
      *
-     * @return the instance of movie service
+     * @return the instance of menu service
      */
     public static MenuService getInstance() {
         return MenuServiceInstanceHolder.INSTANCE;

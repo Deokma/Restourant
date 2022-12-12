@@ -28,9 +28,9 @@ public class MenuOrderServiceImpl implements MenuOrderService {
     }
 
     /**
-     * Gets instance of movie service.
+     * Gets instance of menuorder service.
      *
-     * @return the instance of movie service
+     * @return the instance of menuorder service
      */
     public static MenuOrderService getInstance() {
         return MenuOrderServiceImpl.MenuOrderServiceInstanceHolder.INSTANCE;
@@ -41,8 +41,8 @@ public class MenuOrderServiceImpl implements MenuOrderService {
         try {
             menuOrderDao.add(menuOrder);
         } catch (DaoException e) {
-            logger.error("Can't handle addMenu request at MenuService", e);
-            throw new ServiceException("Can't handle addMenu request at MenuService", e);
+            logger.error("Can't handle addMenu request at MenuOrderService", e);
+            throw new ServiceException("Can't handle addMenu request at MenuOrderService", e);
         }
     }
 
@@ -51,8 +51,8 @@ public class MenuOrderServiceImpl implements MenuOrderService {
         try {
             menuOrderDao.update(menuOrder);
         } catch (DaoException e) {
-            logger.error("Can't handle update request at MenuService", e);
-            throw new ServiceException("Can't handle update request at MenuService", e);
+            logger.error("Can't handle update request at MenuOrderService", e);
+            throw new ServiceException("Can't handle update request at MenuOrderService", e);
         }
     }
 
@@ -61,7 +61,7 @@ public class MenuOrderServiceImpl implements MenuOrderService {
         try {
             menuOrderDao.delete(menuOrder);
         } catch (DaoException e) {
-            logger.error("Can't handle deleteMenu request at MenuService", e);
+            logger.error("Can't handle deleteMenuOrder request at MenuService", e);
             throw new ServiceException("Can't handle deleteMenu request at MenuService", e);
         }
     }

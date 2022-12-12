@@ -25,9 +25,9 @@ public class OrderServiceImpl implements OrderService {
 
     }
     /**
-     * Gets instance of movie service.
+     * Gets instance of order service.
      *
-     * @return the instance of movie service
+     * @return the instance of order service
      */
     public static OrderService getInstance() {
         return OrderServiceImpl.OrderServiceInstanceHolder.INSTANCE;
@@ -37,8 +37,8 @@ public class OrderServiceImpl implements OrderService {
         try {
             orderDao.update(order);
         } catch (DaoException e) {
-            logger.error("Can't handle update request at MenuService", e);
-            throw new ServiceException("Can't handle update request at MenuService", e);
+            logger.error("Can't handle update request at OrderService", e);
+            throw new ServiceException("Can't handle update request at OrderService", e);
         }
     }
 
@@ -47,8 +47,8 @@ public class OrderServiceImpl implements OrderService {
         try {
             orderDao.delete(order);
         } catch (DaoException e) {
-            logger.error("Can't handle deleteMenu request at MenuService", e);
-            throw new ServiceException("Can't handle deleteMenu request at MenuService", e);
+            logger.error("Can't handle deleteOrder request at OrderService", e);
+            throw new ServiceException("Can't handle deleteOrder request at OrderService", e);
         }
     }
 
@@ -59,34 +59,34 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order findOrderByIdOrderClass(int orderId) throws ServiceException {
         if (orderId == 0) {
-            logger.error("MovieId doesn't present");
-            throw new ServiceException("MovieId doesn't present");
+            logger.error("Order doesn't present");
+            throw new ServiceException("Order doesn't present");
         }
         try {
             Optional<Order> optionalOrder = orderDao.findOrderByOrderId(orderId);
             if (optionalOrder.isPresent()) {
                 return optionalOrder.get();
             } else {
-                logger.error("Movie with id={} not found", orderId);
-                throw new ServiceException("Movie with id=" + orderId + " not found");
+                logger.error("Orderid with id={} not found", orderId);
+                throw new ServiceException("Orderid with id=" + orderId + " not found");
             }
         } catch (DaoException e) {
-            logger.error("Can't handle getMovieById request at MovieService", e);
-            throw new ServiceException("Can't handle getMovieById request at MovieService", e);
+            logger.error("Can't handle getOrderById request at OrderService", e);
+            throw new ServiceException("Can't handle getOrderById request at OrderService", e);
         }
     }
     @Override
     public List<Order> findOrderByIdOrder(int orderid) throws ServiceException {
         if (orderid == 0) {
-            logger.error("Title doesn't present");
-            throw new ServiceException("Title doesn't present");
+            logger.error("Order doesn't present");
+            throw new ServiceException("Order doesn't present");
         }
         List<Order> orders;
         try {
             orders = orderDao.findOrderByIdOrder(orderid);
         } catch (DaoException e) {
-            logger.error("Can't handle findMenuByDishName request at MenuService", e);
-            throw new ServiceException("Can't handle findMenuByDishName request at MenuService", e);
+            logger.error("Can't handle findOrderByOrder request at OrderService", e);
+            throw new ServiceException("Can't handle findOrderByOrder request at OrderService", e);
         }
         return orders;
     }
@@ -102,8 +102,8 @@ public class OrderServiceImpl implements OrderService {
         try {
             orders = orderDao.findOrderByOrderStatus(orderStatus);
         } catch (DaoException e) {
-            logger.error("Can't handle findOrderByOrderStatus request at MenuService", e);
-            throw new ServiceException("Can't handle findOrderByOrderStatus request at MenuService", e);
+            logger.error("Can't handle findOrderByOrderStatus request at OrderService", e);
+            throw new ServiceException("Can't handle findOrderByOrderStatus request at OrderService", e);
         }
         return orders;
     }

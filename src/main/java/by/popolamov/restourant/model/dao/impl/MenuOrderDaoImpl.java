@@ -56,7 +56,7 @@ public class MenuOrderDaoImpl implements MenuOrderDao {
     /**
      * Gets instance.
      *
-     * @return the instance of movie dao
+     * @return the instance of menuorder dao
      */
     public static MenuOrderDao getInstance() {
         return MenuOrderDaoImpl.MySqlMenuOrderDaoInstanceHolder.INSTANCE;

@@ -11,6 +11,7 @@
 </head>
 <body>
 <jsp:include page="components/navbar.jsp"/>
+<div class="bg-image" style="background-image: url('https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/background.png');">
 <div class="row justify-content-center">
     <div class="col-8">
         <h1>Profile</h1>
@@ -49,5 +50,7 @@
         </div>
     </div>
 </div>
+</div>
+<jsp:include page="components/footer.jsp"/>
 </body>
 </html>

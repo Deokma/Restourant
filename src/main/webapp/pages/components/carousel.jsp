@@ -1,7 +1,7 @@
 <!-- Только CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-<div id="carouselExampleCaptions" class="carousel slide p-5" data-bs-ride="false">
+<div id="carouselExampleCaptions" class="carousel slide p-5" data-bs-ride="carousel">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -11,20 +11,20 @@
                 aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner ratio ratio-21x9">
-        <div class="carousel-item active">
-            <img src="https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/1.png"
-                 class="d-block w-100 rounded-5" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-            </div>
-        </div>
-        <div class="carousel-item">
+        <div class="carousel-item active" data-bs-interval="5000">
             <img src="https://github.com/Deokma/Restourant/blob/master/src/main/webapp/pages/images/2.png?raw=true"
                  class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>
         </div>
-        <div class="carousel-item">
+        <div class="carousel-item" data-bs-interval="3000">
             <img src="https://github.com/Deokma/Restourant/blob/master/src/main/webapp/pages/images/3.png?raw=true"
+                 class="d-block w-100 rounded-5" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+            </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="3000">
+            <img src="https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/1.png"
                  class="d-block w-100 rounded-5" alt="...">
             <div class="carousel-caption d-none d-md-block">
             </div>

@@ -16,8 +16,7 @@
 </head>
 <body>
 <jsp:include page="components/navbar.jsp"/>
-<div class="bg-image"
-     style="background-image: url('https://raw.githubusercontent.com/Deokma/Restourant/master/src/main/webapp/pages/images/background.png');">
+
     <div class="container text-center">
         <h2 class="d-flex">🛒Cart</h2>
     </div>
